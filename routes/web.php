@@ -14,6 +14,7 @@ use App\Models\Games;
 |
 */
 
+//call view root
 Route::get('/', function() {
     return view('games', [
         'games' => Games::all()
