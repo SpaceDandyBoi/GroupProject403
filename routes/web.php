@@ -13,7 +13,7 @@ use App\Models\Games;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//test
 //call view root
 Route::get('/', function() {
     return view('games', [
