@@ -13,10 +13,18 @@ use App\Models\Games;
 | contains the "web" middleware group. Now create something great!
 |
 */
-//test
+
 //call view root
 Route::get('/', function() {
     return view('games', [
         'games' => Games::all()
+    ]);
+});
+
+
+//Enter game page
+Route::get('/Game/{id}', function($id){
+    return view('game', [
+        'game' => Games::findGame($id)
     ]);
 });

@@ -30,7 +30,7 @@
     </div>
     <div class="game_card_info_title">
       <h2 class='game_card_info_title_text'>
-        <a href="">{{$game['name']}} </a>
+        <a href="/game/{{$game['id']}}">{{$game['name']}} </a>
       </h2>
     </div>
   </div>

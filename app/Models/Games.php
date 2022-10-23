@@ -10,4 +10,14 @@ class Games {
         $games = json_decode($response, true)['results'];
         return $games;
     }
+
+    public static function findGame($id){
+        $game = self::all();
+
+        foreach($game as $Games){
+            if ($Games['id']==$id) {
+                return $Games;
+            }
+        }
+    }
 }
