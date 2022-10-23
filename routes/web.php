@@ -23,7 +23,7 @@ Route::get('/', function() {
 
 
 //Enter game page
-Route::get('/Game/{id}', function($id){
+Route::get('/game/{id}', function($id){
     return view('game', [
         'game' => Games::findGame($id)
     ]);
