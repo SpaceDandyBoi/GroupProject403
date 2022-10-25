@@ -21,8 +21,9 @@ Route::get('/', function() {
     ]);
 });
 
-Route::get('/game/{slug}', function($slug) {
+//Enter game page
+Route::get('/game/{id}', function($id){
     return view('game', [
-        'game' => Games::find($slug)
+        'game' => Games::findGame($id)
     ]);
 });

@@ -7,7 +7,7 @@
         margin-right: 4%;
     }
 
-    #leftSide {
+    #topSide {
         width: 100%;
         height: 50%;
         display: flex;
@@ -38,7 +38,7 @@
 @section('content')
     <div class="Game_Container">
 
-        <div id="leftSide" name="leftSide" class="GameChild">
+        <div id="topSide" name="topSide" class="GameChild">
 
             <div style="flex: 1;">
                 <span id="Game_Name" name="Game_Name">
@@ -71,7 +71,25 @@
 
         </div>
 
-        <div id="rightSide" name="rightSide" class="GameChild">
+        <div id="downSide" name="downSide" class="GameChild">
+            <div class="game_galary">
+                <div class="game_galary_top">
+                  <div class="game_galary_top_left">
+                    <img class="game_galary_top_arrows" src={{asset('/images/icons/left_arrow.svg')}}>
+                  </div>
+                  <div class="game_galary_top_middle">
+                    <img class="game_galary_top_middle_pic" src={{$game['short_screenshots'][1]['image']}}>
+                  </div>
+                  <div class="game_galary_top_right">
+                    <img class="game_galary_top_arrows" src={{asset('/images/icons/right_arrow.svg')}}>
+                  </div>
+                </div>
+                <div class="game_galary_bottom">
+                  @foreach($game['short_screenshots'] as $pic)
+                    <img class="game_galary_bottom_pics" src="{{$pic['image']}}">
+                  @endforeach
+                </div>
+              </div>
         </div>
     </div>
 @endsection
