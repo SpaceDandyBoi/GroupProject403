@@ -14,15 +14,25 @@ use App\Models\Games;
 |
 */
 
+//home page
 Route::get('/', function() {
+    return view('Home');
+});
+
+//going to a specific page
+Route::get('/{page}', function($page) {
     return view('games', [
         'heading' => 'New and Trending Games',
-        'games' => Games::all()
+        'games' => Games::getPage($page)
     ]);
 });
 
+//getting a game from a specific page
 Route::get('/game/{slug}', function($slug) {
+    $curPageName = "$_SERVER[HTTP_REFERER]";
+    $curPageName = substr($curPageName, strrpos($curPageName, '/') + 1);;
+    $int = (int)$curPageName;
     return view('game', [
-        'game' => Games::find($slug)
+        'game' => Games::find($slug, $int)
     ]);
 });

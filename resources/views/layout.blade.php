@@ -198,7 +198,7 @@
         <a href='/'> Home </a>
       </h2>
       <h2 class='header_links_text'>
-        <a href=''> Games </a>
+        <a href='/1'> Games </a>
       </h2>
       <h2 class='header_links_text'>
         <a href=''> Charts </a>
