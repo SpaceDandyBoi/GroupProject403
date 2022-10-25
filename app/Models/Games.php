@@ -12,9 +12,10 @@ class Games {
     }
     public static function find($slug){
         $games = self::all();
-    foreach($games as $slugs){
-        if ($slugs["slug"] == $slug){
-            $game = $slugs;
+        foreach($games as $slugs){
+            if ($slugs["slug"] == $slug){
+                $game = $slugs;
+            }
         }
     }
 }
