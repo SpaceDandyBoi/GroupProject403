@@ -14,17 +14,15 @@ use App\Models\Games;
 |
 */
 
-//call view root
 Route::get('/', function() {
     return view('games', [
+        'heading' => 'New and Trending Games',
         'games' => Games::all()
     ]);
 });
 
-
-//Enter game page
-Route::get('/game/{id}', function($id){
+Route::get('/game/{slug}', function($slug) {
     return view('game', [
-        'game' => Games::findGame($id)
+        'game' => Games::find($slug)
     ]);
 });

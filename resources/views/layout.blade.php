@@ -47,36 +47,36 @@
       height: 5cm;
     }
     .top_header{
-      height: 3cm;
-      margin-top: 10px;
+      height: 70%;
+    }
+    .header_top_logo {
+      float: left;
+    }
+    .header_top_logo_pic {
+    }
+    .header_top_title {
+      display: inline-block;
+      font-size: 30pt;
+      width: 75%;
+      text-align: center;
+      margin: 0;
+    }
+    .header_top_title_text {
+      margin: 0;
     }
     .header_links {
-      height: 1cm;
-      margin-top: 10px;
-      padding-left: 0;
-      padding-top: 10px;
+      height: fit-content;
+      width: 75%;
+      display: inline-block;
+      margin: auto;
       text-align: center;
     }
     .header_links_text {
-      margin: 0;
-      margin-left: 20px;
+      margin-right: 15px;
       display: inline-block;
+
     }
     .content {
-    }
-    .header_logo {
-      display: inline-block;
-    }
-    
-    .header_title {
-      display: inline-block;
-      vertical-align: top;
-      padding-left: 5cm;
-      padding-top: 10px;
-      font-size: 30pt;
-    }
-    .header_title_text {
-      margin-top: 0;
     }
     .game_card_pic {
       width: 100%;
@@ -124,16 +124,72 @@
       height: 20px;
       margin: 2px;
     }
+    .game_galary{
+      background-color: rgba(0, 0, 0, 0.3);
+      border-radius: 3%;
+    }
+    .game_galary_top {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      height: 10cm;
+    }
+    .game_galary_top_left {
+      height: 90%;
+      width: 20%;
+      display: inline-block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .game_galary_top_middle {
+      height: 90%;
+      width: 60%;
+      display: inline-block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .game_galary_top_middle_pic{
+      height: 100%;
+    }
+    .game_galary_top_right {
+      height: 90%;
+      width: 20%;
+      display: inline-block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .game_galary_top_arrows {
+      height: 25%;
+      opacity: 0.5;
+    }
+    .game_galary_bottom {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 3cm;
+      width: 100%;
+    }
+    .game_galary_bottom_pics {
+      height: 80%;
+      border-radius: 5px;
+      margin: 5px;
+    }
+    .game_galary_bottom_pics:hover {
+      border-style: solid;
+    }
     
   </style>
 </head>
 <body>
   <div class='header'>
     <div class='top_header'>
-      <div class='header_logo'>
-      <img class='logo' src={{asset('/images/logo.png')}}>
+      <div class='header_top_logo'>
+        <img class='header_top_logo_pic' src={{asset('/images/logo.png')}}>
       </div>
-      <div class='header_title'>
+      <div class='header_top_title'>
         <h1 class='header_title_text'> Laravel Demo </h1>
       </div>
     </div>
