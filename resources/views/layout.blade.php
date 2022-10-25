@@ -115,7 +115,7 @@
 
     }
     .game_card_info_rating_text{
-      margin: 0;
+      margin: auto;
       color:rgb(35, 35, 35);
       text-align: center;
     }
@@ -195,7 +195,7 @@
     </div>
     <div class='header_links'>
       <h2 class='header_links_text'>
-        <a href=''> Home </a>
+        <a href='/'> Home </a>
       </h2>
       <h2 class='header_links_text'>
         <a href=''> Games </a>
