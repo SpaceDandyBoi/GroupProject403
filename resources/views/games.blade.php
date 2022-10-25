@@ -3,11 +3,10 @@
 @section('content')
 
 <h1 style="margin-left: 20px;">
-  New and Trending Games
+  {{$heading}}
 </h1>
 <div class="game_card_container">
   @foreach($games as $game)
-  @if(count($game) > 3)
   <div class="game_card">
     <img class='game_card_pic' src={{$game['background_image']}}>
     <div class="game_card_info">
@@ -30,11 +29,10 @@
     </div>
     <div class="game_card_info_title">
       <h2 class='game_card_info_title_text'>
-        <a href="/game/{{$game['id']}}">{{$game['name']}} </a>
+        <a href="/game/{{$game['slug']}}">{{$game['name']}} </a>
       </h2>
     </div>
   </div>
-  @endif
   @endforeach
 </div>
 
