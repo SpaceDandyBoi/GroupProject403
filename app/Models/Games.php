@@ -17,6 +17,4 @@ class Games {
             $game = $slugs;
         }
     }
-        return $game;
-    }
 }
