@@ -180,6 +180,17 @@
     .game_galary_bottom_pics:hover {
       border-style: solid;
     }
+    .round{
+      font-size: 200%;
+      padding: 0.5% 1%;
+    }
+    .round:hover{
+      background-color: #ddd;
+      color: black;
+    }
+    .footer{
+      background-color: rgb(45, 45, 45);
+    }
     
   </style>
 </head>
@@ -210,6 +221,11 @@
   </div>
   <div class='content'>
     @yield('content')
+  </div>
+  <div class="footer">
+    <p>footer stuff</p>
+    <p>footer stuff</p>
+    <p>footer stuff</p>
   </div>
 </body>
 </html>

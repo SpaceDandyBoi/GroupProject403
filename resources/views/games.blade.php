@@ -36,5 +36,32 @@
   @endforeach
 </div>
 
+<div style="align-content: center; text-align: center; ">
+  <?php
+  $curPageName = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+  $curPageName = substr($curPageName, strrpos($curPageName, '/') + 1);
+  $int = (int)$curPageName;
+  $previous;
+  $next;
+  if($int-1>0){
+      $previous = $int-1;
+  }else {
+      $previous = $int;
+  }
+  if ($int+1<499) {
+      $next = $int+1;
+  }else {
+      $next = $int;
+  }
+  $Sprevious= "/{$previous}";
+  $Snext= "/{$next}";
+  
+  
+?>
+
+<a href={{$Sprevious}} class="round">&#8249;</a>
+<a href={{$Snext}} class="round">&#8250;</a>
+</div>
+
 
 @endsection
