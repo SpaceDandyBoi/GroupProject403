@@ -17,17 +17,7 @@ return new class extends Migration
             $table->id();
             $table->String('name');
             $table->String('slug');
-            $table->date('released')->nullable();
-            $table->String('background_image');
-            $table->float('rating');
-            $table->json('parent_platforms');
-            $table->json('ratings');
-            $table->json('platforms');
-            $table->json('genres');
-            $table->json('stores');
-            $table->json('tags');
-            $table->json('esrb_rating');
-            $table->json('short_screenshots');
+            $table->integer('pageNum');
         });
     }
 

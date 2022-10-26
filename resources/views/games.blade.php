@@ -11,7 +11,7 @@
     <img class='game_card_pic' src={{$game['background_image']}}>
     <div class="game_card_info">
       <div class="game_card_info_platforms">
-        @foreach(json_decode($game['parent_platforms'], true) as $platform)
+        @foreach($game['parent_platforms'] as $platform)
         <img class="game_card_info_platforms_icons" src={{asset('/images/icons/'.$platform['platform']['slug'].'.svg')}}
         alt={{$platform['platform']['name']}}>
         @endforeach

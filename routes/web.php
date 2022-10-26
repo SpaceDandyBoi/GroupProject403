@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\Games;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,22 +16,6 @@ use App\Models\Games;
 */
 
 
-Route::get('/', function() {
-    return view('games', [
-        'heading' => 'New and Trending Games',
-        'games' => Games::all()
-    ]);
-});
-
-Route::get('/game/{slug}', function($slug) {
-    return view('game', [
-        'game' => Games::find($slug)
-    ]);
-});
-
-
-/* 
-//Khalid stuff
 //home page
 Route::get('/', function() {
     return view('Home');
@@ -44,13 +29,12 @@ Route::get('/{page}', function($page) {
     ]);
 });
 
-//getting a game from a specific page
+
+//going into game page
 Route::get('/game/{slug}', function($slug) {
-    $curPageName = "$_SERVER[HTTP_REFERER]";
-    $curPageName = substr($curPageName, strrpos($curPageName, '/') + 1);;
-    $int = (int)$curPageName;
+
+    $GameRow = Games::where('slug', '=', $slug)->get();
     return view('game', [
-        'game' => Games::find($slug, $int)
+        'game' => Games::find($slug, $GameRow[0]['pageNum'])
     ]);
 });
- */
