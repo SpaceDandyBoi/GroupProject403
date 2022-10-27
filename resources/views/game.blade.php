@@ -4,6 +4,7 @@
       margin-left: 5%;
       margin-top: 3%;
       margin-right: 4%;
+      overflow:hidden;
   }
 
   #leftSide {
@@ -11,11 +12,12 @@
       height: 50%;
       display: flex;
       flex-wrap: wrap;
+      overflow:hidden;
   }
 
   #Game_Name {
       font-family: 'Franklin Gothic Medium';
-      font-size: 500%;
+      font-size: 300%;
       color: #white;
       -webkit-text-stroke: 0.1rem #010100;
   }
@@ -29,7 +31,8 @@
   }
 
   #imageGame {
-      width: 60%;
+    max-width:100%;
+    max-height:100%;
   }
 </style>
 
@@ -40,7 +43,7 @@
 
       <div id="leftSide" name="leftSide" class="GameChild">
 
-          <div style="flex: 1;">
+          <div style="flex: 1; overflow:hidden;">
               <span id="Game_Name" name="Game_Name">
                   {{ $game['name'] }}
               </span>
@@ -58,11 +61,13 @@
               }
               ?>
               <div id="ratingBox" name="ratingBox"
-                  style="background-color: {{ $rating_color }}; border: 2px solid {{ $rating_color }};">
+                  style="background-color: {{ $rating_color }}; border: 2% solid {{ $rating_color }};">
                   {{ $game['rating'] }}
               </div>
               <br>
-              <img id="imageGame" name="imageGame" src={{ $game['background_image'] }}>
+              <div style="height: 325px; width: 500px;">
+                <img id="imageGame" name="imageGame" src={{ $game['background_image'] }}>
+              </div>
               <p>Released: {{ $game['released'] }}</p>
           </div>
 
