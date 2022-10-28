@@ -38,7 +38,7 @@ class GameController extends Controller
             }
         }
         return view('games', [
-            'heading' => 'popular games',
+            'heading' => 'Most Popular Games',
             'games' => $Pgames
         ]);
     }
@@ -58,7 +58,7 @@ class GameController extends Controller
                 }
             }
             return view('games', [
-                'heading' => 'popular games',
+                'heading' => 'Highest Rated Games',
                 'games' => $Pgames
             ]);
         }
@@ -77,7 +77,7 @@ class GameController extends Controller
                             }
                         }
                         return view('games', [
-                            'heading' => 'popular games',
+                            'heading' => 'Longest Games',
                             'games' => $Pgames
                         ]);
                     }
