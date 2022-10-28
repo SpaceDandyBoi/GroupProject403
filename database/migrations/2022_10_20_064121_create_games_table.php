@@ -15,9 +15,21 @@ return new class extends Migration
     {
         Schema::create('games', function (Blueprint $table) {
             $table->id();
-            $table->String('name');
+            $table->String('name')->nullable();
             $table->String('slug');
-            $table->integer('pageNum');
+            $table->date('released')->nullable();
+            $table->String('background_image')->nullable();
+            $table->float('rating');
+            $table->integer('added');
+            $table->integer('playtime')->nullable();
+            $table->json('parent_platforms');
+            $table->json('ratings');
+            $table->json('platforms');
+            $table->json('genres');
+            $table->json('stores')->nullable();
+            $table->json('tags');
+            $table->json('esrb_rating')->nullable();
+            $table->json('short_screenshots')->nullable();
         });
     }
 

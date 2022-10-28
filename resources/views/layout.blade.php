@@ -13,6 +13,12 @@
       background-color: rgb(35, 35, 35);
       color: white;
     }
+    .header_title_text{
+      font-size: 300%;
+      color: red;
+      -webkit-text-stroke: 0.1rem black;
+      font-family:'verdana'
+    }
     .game_card_container{
       display: flex;
       flex-wrap: wrap;
@@ -44,7 +50,8 @@
     }
     .header {
       background-color: rgb(45, 45, 45);
-      height: 5cm;
+      height: 40%;
+      align-content: center;
     }
     .top_header{
       height: 70%;
@@ -64,18 +71,77 @@
     .header_top_title_text {
       margin: 0;
     }
-    .header_links {
-      height: fit-content;
-      width: 75%;
-      display: inline-block;
-      margin: auto;
-      text-align: center;
+      /* Navbar container */
+    .navbar {
+      overflow: hidden;
+      font-family: Arial;
     }
-    .header_links_text {
-      margin-right: 15px;
-      display: inline-block;
 
+    /* Links inside the navbar */
+    .navbar a {
+      font-size: 150%;
+      float: left;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
     }
+
+    /* The dropdown container */
+    .dropdown {
+      float: left;
+      overflow: hidden;
+    }
+    .dropbtn:hover{
+      cursor: pointer;
+    }
+
+    /* Dropdown button */
+    .dropdown .dropbtn {
+      font-size: 150%;
+      border: none;
+      outline: none;
+      color: white;
+      padding: 14px 16px;
+      background-color: inherit;
+      font-family: inherit; /* Important for vertical align on mobile phones */
+      margin: 0; /* Important for vertical align on mobile phones */
+    }
+
+    /* Add a red background color to navbar links on hover */
+    .navbar a:hover, .dropdown:hover .dropbtn {
+      background-color: red;
+    }
+
+    /* Dropdown content (hidden by default) */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    /* Links inside the dropdown */
+    .dropdown-content a {
+      float: none;
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+
+    /* Add a grey background color to dropdown links on hover */
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {
+      display: block;
+    } 
     .content {
     }
     .game_card_pic {
@@ -196,28 +262,31 @@
 </head>
 <body>
   <div class='header'>
-    <div class='top_header'>
       <div class='header_top_logo'>
         <img class='header_top_logo_pic' src={{asset('/images/logo.png')}}>
       </div>
-      <div class='header_top_title'>
-        <h1 class='header_title_text'> Laravel Demo </h1>
+      <div class="navbar" style="float: right;">
+        <a href="/">Login</a>
+        <a href="/">Register</a>
       </div>
-    </div>
-    <div class='header_links'>
-      <h2 class='header_links_text'>
-        <a href='/'> Home </a>
-      </h2>
-      <h2 class='header_links_text'>
-        <a href='/1'> Games </a>
-      </h2>
-      <h2 class='header_links_text'>
-        <a href=''> Charts </a>
-      </h2>
-      <h2 class='header_links_text'>
-        <a href=''> Blog </a>
-      </h2>
-    </div>
+      <div class='header_top_title'>
+        <h1 class='header_title_text'> Game Show </h1>
+      </div>
+      <div class="navbar" style="margin-left: 40%;">
+        <a href="/">Home</a>
+        <div class="dropdown">
+          <button class="dropbtn" onclick="location.href='/games/1'">Games
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="/highestRatedGames">Highest score</a>
+            <a href="/mostPopularGames">most Popular</a>
+            <a href="/longestGames">time</a>
+          </div>
+        </div>
+        <a href="/">Charts</a>
+        <a href="/">Blog</a>
+      </div> 
   </div>
   <div class='content'>
     @yield('content')

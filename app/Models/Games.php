@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Error;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\DB;
@@ -23,36 +24,57 @@ class Games extends Model {
         }
         */
         
-        for($x = 1; $x < 500; $x++){
+        for($x = 1; $x <= 500; $x++){
             $response = Http::get('https://api.rawg.io/api/games?key=febea05adb80464cafbdf3c51a1d4e6e&page='.$x);
             $games = json_decode($response, true)['results'];
             foreach($games as $game){
                 $name = $game['name'];
                 $slug = $game['slug'];
-                $pageNum = $x;
-
-                $data=array('name'=>$name, 'slug'=>$slug, 'pageNum'=>$pageNum);
+                $released = $game['released'];
+                $background_image = $game['background_image'];
+                $rating = $game['rating'];
+                $added = $game['added'];
+                $playtime = $game['playtime'];
+                $parent_platforms = $game['parent_platforms'];
+                $ratings = $game['ratings'];
+                $platforms = $game['platforms'];
+                $genres = $game['genres'];
+                $stores = $game['stores'];
+                $tags = $game['tags'];
+                $esrb_rating = $game['esrb_rating'];
+                $short_screenshots = $game['short_screenshots'];
+    
+                $data=array('name'=>$name, 'slug'=>$slug, 'released'=>$released, 
+                'background_image'=>$background_image, 'rating'=>$rating,
+                'added'=>$added, 'playtime'=>$playtime,
+                'parent_platforms'=>json_encode($parent_platforms, true),
+                'ratings'=>json_encode($ratings, true),
+                'platforms'=>json_encode($platforms, true),
+                'genres'=>json_encode($genres, true),
+                'stores'=>json_encode($stores, true),
+                'tags'=>json_encode($tags, true),
+                'esrb_rating'=>json_encode($esrb_rating, true),
+                'short_screenshots'=>json_encode($short_screenshots, true));
 
                 DB::table('games')->insert($data);
             }
         }
     }
 
-    public static function find($slug, $pageNum){
-        $games = self::getPage($pageNum);
-        foreach($games as $slugs){
-            if ($slugs["slug"] == $slug){
-                $game = $slugs;
-            }
+    public static function getPage($pageNum){
+        $finish=$pageNum*20;
+        $start=$finish-20;
+        $counter=0;
+        $gameLibrary = Games::select()->get();
+        $Pgames= array($gameLibrary[1]);
+        for ($i=$start; $i <$finish; $i++) { 
+            $Pgames[$counter]=$gameLibrary[$i];
+            $counter++;
         }
-        return $game;
+        return $Pgames;
     }
 
-    public static function getPage($pageNum){
-        $response = Http::get('https://api.rawg.io/api/games?key=febea05adb80464cafbdf3c51a1d4e6e&page='.$pageNum);
-        $games = json_decode($response, true)['results'];
-        return $games;
-    }
+
 
 
     /* 

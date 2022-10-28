@@ -12,7 +12,16 @@ Route::get('/', function() {
 });
 
 //going to a specific page
-Route::get('/{page}', [GameController::class, 'index']);
+Route::get('/games/{page}', [GameController::class, 'index']);
 
 //going into game page
 Route::get('/game/{slug}', [GameController::class, 'show']) ;
+
+//going into most popular games page
+Route::get('/mostPopularGames', [GameController::class, 'showMostPopular']) ;
+
+//going into highest rated games page
+Route::get('/highestRatedGames', [GameController::class, 'showHighestRated']) ;
+
+//going into longest games page
+Route::get('/longestGames', [GameController::class, 'showLongestGames']) ;
