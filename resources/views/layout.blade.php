@@ -257,8 +257,13 @@
     .footer{
       background-color: rgb(45, 45, 45);
     }
+    .search-container {
+      float: right;
+      font-size: 300%;
+    }
+
+</style>
     
-  </style>
 </head>
 <body>
   <div class='header'>
@@ -271,6 +276,11 @@
       </div>
       <div class='header_top_title'>
         <h1 class='header_title_text'> Game Show </h1>
+      </div>
+      <div class="search-container">
+        <form action="/search">
+          <input type="text" placeholder="Search.." name="search" style="font-size: 70%">
+        </form>
       </div>
       <div class="navbar" style="margin-left: 40%;">
         <a href="/">Home</a>

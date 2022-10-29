@@ -25,3 +25,6 @@ Route::get('/highestRatedGames', [GameController::class, 'showHighestRated']) ;
 
 //going into longest games page
 Route::get('/longestGames', [GameController::class, 'showLongestGames']) ;
+
+//going into longest games page
+Route::get('/search', [GameController::class, 'searchGames']) ;
