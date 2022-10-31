@@ -295,7 +295,7 @@
           </div>
         </div>
         <a href="/">Charts</a>
-        <a href="/">Blog</a>
+        <a href="http://abaubaid.info/blog/">Blog</a>
       </div> 
   </div>
   <div class='content'>
