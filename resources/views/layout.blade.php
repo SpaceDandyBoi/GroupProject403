@@ -12,26 +12,9 @@
     body {
       background-color: rgb(35, 35, 35);
       color: white;
+      font-family:'verdana';
     }
-    .game_card_container{
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      align-items: flex-start;
-      padding-left: 20px;
-      padding-right: 20px;
-    }
-    .game_card {
-      background-color: rgb(45, 45, 45);
-      border-radius: 20px;
-      padding: 3px;
-      padding-left: 0;
-      padding-right: 0;
-      margin: 20px;
-      width: 300px;
-      height: fit-content;
-      vertical-align: top;
-    }
+    /* ------------------------------------------------------------------------------------- */
     .title {
       text-align: center;
     }
@@ -86,8 +69,15 @@
     }
     .header_links {
       flex-grow: 100%;
-      margin-top: 30px;
+      margin-top: 20px;
     
+    }
+    .search_container {
+      float: right;
+      font-size: 200%;
+      border-radius: 15%;
+      display: inline;
+      margin-top: -35px;
     }
     .header_links_flex {
       width: fit-content;
@@ -106,7 +96,94 @@
       border-color: #EF3B2D;
       border-bottom-style: solid;
     }
+        /* Dropdown button */
+    .dropdown .dropbtn {
+      font-size: 23px;
+      color: white;
+      background-color: transparent;
+      border-style: none;
+      font-family:'verdana';
+      display: inline;
+      padding: 5px;
+      border-bottom: 5px;
+      border-radius: 15%;
+      transition-duration: 0.3s;
+
+      /* font-size: 150%;
+      border: none;
+      outline: none;
+      color: white;
+      padding: 14px 16px;
+      background-color: inherit;
+      font-family: inherit; /* Important for vertical align on mobile phones 
+      margin: 0; /* Important for vertical align on mobile phones */ 
+    }
+
+    /* Add a red background color to navbar links on hover */
+    .navbar a:hover, .dropdown:hover .dropbtn {
+      background-color: red;
+    }
+
+    /* Dropdown content (hidden by default) */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    /* Links inside the dropdown */
+    .dropdown-content a {
+      float: none;
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: center;
+    }
+
+    /* Add a grey background color to dropdown links on hover */
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {
+      display: block;
+    } 
+
+    /* The dropdown container */
+    .dropdown {
+      overflow: hidden;
+      display: inline;
+      
+    }
+    .dropbtn:hover{
+      cursor: pointer;
+    }
+    /* ------------------------------------------------------------------------------------- */
     .content {
+    }
+    .game_card_container{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: flex-start;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .game_card {
+      background-color: rgb(45, 45, 45);
+      border-radius: 20px;
+      padding: 3px;
+      padding-left: 0;
+      padding-right: 0;
+      margin: 20px;
+      width: 300px;
+      height: fit-content;
+      vertical-align: top;
     }
     .game_card_pic {
       width: 100%;
@@ -132,7 +209,7 @@
       background-color: rgb(255, 255, 255);
       border-radius: 5px;
       height: 25px;
-      width: 33px;
+      width: 45px;
       float: right;
       padding: 3px;
       margin: 5px;
@@ -154,6 +231,7 @@
       height: 20px;
       margin: 2px;
     }
+    /* ------------------------------------------------------------------------------------- */
     .game_galary{
       background-color: rgba(0, 0, 0, 0.3);
       border-radius: 3%;
@@ -210,7 +288,15 @@
     .game_galary_bottom_pics:hover {
       border-style: solid;
     }
-    
+    .round{
+      font-size: 200%;
+      padding: 0.5% 1%;
+    }
+    .round:hover{
+      background-color: #ddd;
+      color: black;
+    }
+    /* ------------------------------------------------------------------------------------- */
   </style>
 </head>
 <body>
@@ -235,15 +321,28 @@
           <h2 class='header_links_text' id="header_link_home">
             <a href='/'> Home </a>
           </h2>
-          <h2 class='header_links_text' id="header_link_games">
-            <a href='/highestRatedGames'> Games </a>
-          </h2>
+          <div class="dropdown">
+            <button class="dropbtn" onclick="location.href='/games/1'"><b>Games</b>
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="/highestRatedGames">Highest score</a>
+              <a href="/mostPopularGames">Most Popular</a>
+              <a href="/longestGames">Time</a>
+            </div>
+          </div>
           <h2 class='header_links_text' id="header_link_charts">
             <a href=''> Charts </a>
           </h2>
           <h2 class='header_links_text' id="header_link_blog">
-            <a href=''> Blog </a>
+            <a href='http://abaubaid.info/blog/'> Blog </a>
           </h2>
+          
+        </div>
+        <div class="search_container">
+          <form action="/search">
+            <input type="text" placeholder="Search.." name="search" style="font-size: 70%">
+          </form>
         </div>
       </div>
     </div>
