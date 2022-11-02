@@ -13,6 +13,12 @@
       background-color: rgb(35, 35, 35);
       color: white;
     }
+    .header_title_text{
+      font-size: 300%;
+      color: red;
+      -webkit-text-stroke: 0.1rem black;
+      font-family:'verdana'
+    }
     .game_card_container{
       display: flex;
       flex-wrap: wrap;
@@ -40,72 +46,102 @@
       text-decoration: none;
     }
     a:hover {
+      text-decoration: underline;
     }
     .header {
       background-color: rgb(45, 45, 45);
-      height: 5cm;
+      height: 40%;
+      align-content: center;
     }
     .top_header{
       height: 70%;
-      display: inline-flexbox;
-      justify-content: start;
-      align-items: flex-start;
-      flex-wrap: wrap;
     }
     .header_top_logo {
       float: left;
-      width: fit-content;
     }
     .header_top_logo_pic {
     }
-    .header_top_login_register {
-      float: right;
-      margin: 0;
-      height: 100%;
-    }
-    .header_top_login_register_links {
-      display: inline-block;
-      padding: 5px;
-      margin: 5px;
-      border-radius: 15%;
-      transition-duration: 0.3s;
-    }
-    .header_top_login_register_links:hover {
-      background-color:#EF3B2D;
-    }
     .header_top_title {
+      display: inline-block;
       font-size: 30pt;
+      width: 75%;
       text-align: center;
-      height: 100%;
-      flex-grow: 100%;
+      margin: 0;
     }
-    h1 {
-      margin: 0 auto;
-      margin-top: 15px;
-      
+    .header_top_title_text {
+      margin: 0;
     }
-    .header_links {
-      flex-grow: 100%;
-      margin-top: 30px;
-    
+      /* Navbar container */
+    .navbar {
+      overflow: hidden;
+      font-family: Arial;
     }
-    .header_links_flex {
-      width: fit-content;
-      margin: 0 auto;
+
+    /* Links inside the navbar */
+    .navbar a {
+      font-size: 150%;
+      float: left;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
     }
-    .header_links_text {
-      display: inline;
-      padding: 5px;
-      padding-bottom: 0;
-      border-bottom: 5px;
-      border-radius: 15%;
-      transition-duration: 0.3s;
+
+    /* The dropdown container */
+    .dropdown {
+      float: left;
+      overflow: hidden;
     }
-    .header_links_text:hover {
-      background-color: #EF3B2D;
-      border-color: #EF3B2D;
-      border-bottom-style: solid;
+    .dropbtn:hover{
+      cursor: pointer;
     }
+
+    /* Dropdown button */
+    .dropdown .dropbtn {
+      font-size: 150%;
+      border: none;
+      outline: none;
+      color: white;
+      padding: 14px 16px;
+      background-color: inherit;
+      font-family: inherit; /* Important for vertical align on mobile phones */
+      margin: 0; /* Important for vertical align on mobile phones */
+    }
+
+    /* Add a red background color to navbar links on hover */
+    .navbar a:hover, .dropdown:hover .dropbtn {
+      background-color: red;
+    }
+
+    /* Dropdown content (hidden by default) */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    /* Links inside the dropdown */
+    .dropdown-content a {
+      float: none;
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+
+    /* Add a grey background color to dropdown links on hover */
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {
+      display: block;
+    } 
     .content {
     }
     .game_card_pic {
@@ -145,7 +181,7 @@
 
     }
     .game_card_info_rating_text{
-      margin: 0;
+      margin: auto;
       color:rgb(35, 35, 35);
       text-align: center;
     }
@@ -210,47 +246,65 @@
     .game_galary_bottom_pics:hover {
       border-style: solid;
     }
+    .round{
+      font-size: 200%;
+      padding: 0.5% 1%;
+    }
+    .round:hover{
+      background-color: #ddd;
+      color: black;
+    }
+    .footer{
+      background-color: rgb(45, 45, 45);
+    }
+    .search-container {
+      float: right;
+      font-size: 300%;
+    }
+
+</style>
     
-  </style>
 </head>
 <body>
   <div class='header'>
-    <div class='top_header'>
-      <div class="header_top_login_register">
-        <h3 class='header_top_login_register_links'>
-          <a href=''> Login </a>
-        </h3>
-        <h3 class='header_top_login_register_links'>
-          <a href=''> Register </a>
-        </h3>
-      </div>
       <div class='header_top_logo'>
         <img class='header_top_logo_pic' src={{asset('/images/logo.png')}}>
+      </div>
+      <div class="navbar" style="float: right;">
+        <a href="/">Login</a>
+        <a href="/">Register</a>
       </div>
       <div class='header_top_title'>
         <h1 class='header_title_text'> Game Show </h1>
       </div>
-      <div class='header_links'>
-        <div class='header_links_flex'>
-          <h2 class='header_links_text' id="header_link_home">
-            <a href='/'> Home </a>
-          </h2>
-          <h2 class='header_links_text' id="header_link_games">
-            <a href='/highestRatedGames'> Games </a>
-          </h2>
-          <h2 class='header_links_text' id="header_link_charts">
-            <a href=''> Charts </a>
-          </h2>
-          <h2 class='header_links_text' id="header_link_blog">
-            <a href=''> Blog </a>
-          </h2>
-        </div>
+      <div class="search-container">
+        <form action="/search">
+          <input type="text" placeholder="Search.." name="search" style="font-size: 70%">
+        </form>
       </div>
-    </div>
-    
+      <div class="navbar" style="margin-left: 40%;">
+        <a href="/">Home</a>
+        <div class="dropdown">
+          <button class="dropbtn" onclick="location.href='/games/1'">Games
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="/highestRatedGames">Highest score</a>
+            <a href="/mostPopularGames">most Popular</a>
+            <a href="/longestGames">time</a>
+          </div>
+        </div>
+        <a href="/">Charts</a>
+        <a href="http://abaubaid.info/blog/">Blog</a>
+      </div> 
   </div>
   <div class='content'>
     @yield('content')
+  </div>
+  <div class="footer">
+    <p>footer stuff</p>
+    <p>footer stuff</p>
+    <p>footer stuff</p>
   </div>
 </body>
 </html>

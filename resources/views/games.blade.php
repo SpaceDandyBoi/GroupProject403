@@ -1,10 +1,5 @@
 @extends('layout')
-<style>
-  #header_link_games {
-    border-color: #EF3B2D;
-    border-bottom-style: solid;
-  }
-</style>
+
 @section('content')
 
 <h1 style="margin-left: 20px;">

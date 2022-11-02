@@ -7,11 +7,6 @@
       overflow:hidden;
   }
 
-  #header_link_games {
-    border-color: #EF3B2D;
-    border-bottom-style: solid;
-  }
-
   #leftSide {
       width: 100%;
       height: 50%;
