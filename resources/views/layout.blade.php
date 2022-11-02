@@ -12,12 +12,7 @@
     body {
       background-color: rgb(35, 35, 35);
       color: white;
-    }
-    .header_title_text{
-      font-size: 300%;
-      color: red;
-      -webkit-text-stroke: 0.1rem black;
-      font-family:'verdana'
+      font-family:'verdana';
     }
     .game_card_container{
       display: flex;
@@ -45,32 +40,50 @@
       color: white;
       text-decoration: none;
     }
-    a:hover {
-      text-decoration: underline;
-    }
     .header {
       background-color: rgb(45, 45, 45);
-      height: 40%;
-      align-content: center;
+      height: 5cm;
     }
     .top_header{
       height: 70%;
+      display: inline-flexbox;
+      justify-content: start;
+      align-items: flex-start;
+      flex-wrap: wrap;
     }
     .header_top_logo {
       float: left;
+      width: fit-content;
     }
     .header_top_logo_pic {
     }
-    .header_top_title {
+    .header_top_login_register {
+      float: right;
+      margin: 0;
+      height: 100%;
+    }
+    .header_top_login_register_links {
       display: inline-block;
+      padding: 5px;
+      margin: 5px;
+      border-radius: 15%;
+      transition-duration: 0.3s;
+    }
+    .header_top_login_register_links:hover {
+      background-color:#EF3B2D;
+    }
+    .header_top_title {
       font-size: 30pt;
-      width: 75%;
       text-align: center;
-      margin: 0;
+      height: 100%;
+      flex-grow: 100%;
     }
-    .header_top_title_text {
-      margin: 0;
+    h1 {
+      margin: 0 auto;
+      margin-top: 15px;
+      
     }
+    
       /* Navbar container */
     .navbar {
       overflow: hidden;
@@ -261,50 +274,76 @@
       float: right;
       font-size: 300%;
     }
+    .pageTitle{
+      margin-top: 3%;
+      margin-left: 5%;
+      font-size: 300%
+    }
+
+    
 
 </style>
     
 </head>
 <body>
   <div class='header'>
+    <div class='top_header'>
+
+      <div class="header_top_login_register">
+        <h3 class='header_top_login_register_links'>
+          <a href=''> Login </a>
+        </h3>
+        <h3 class='header_top_login_register_links'>
+          <a href=''> Register </a>
+        </h3>
+      </div>
+
       <div class='header_top_logo'>
         <img class='header_top_logo_pic' src={{asset('/images/logo.png')}}>
       </div>
-      <div class="navbar" style="float: right;">
-        <a href="/">Login</a>
-        <a href="/">Register</a>
-      </div>
+
       <div class='header_top_title'>
         <h1 class='header_title_text'> Game Show </h1>
       </div>
+
       <div class="search-container">
         <form action="/search">
           <input type="text" placeholder="Search.." name="search" style="font-size: 70%">
         </form>
       </div>
+
       <div class="navbar" style="margin-left: 40%;">
         <a href="/">Home</a>
+
         <div class="dropdown">
           <button class="dropbtn" onclick="location.href='/games/1'">Games
             <i class="fa fa-caret-down"></i>
           </button>
+
           <div class="dropdown-content">
-            <a href="/highestRatedGames">Highest score</a>
-            <a href="/mostPopularGames">most Popular</a>
-            <a href="/longestGames">time</a>
+            <a href="/highestRatedGames">Highest Score</a>
+            <a href="/mostPopularGames">Most Popular</a>
+            <a href="/longestGames">Time</a>
           </div>
+
         </div>
+
         <a href="/">Charts</a>
         <a href="http://abaubaid.info/blog/">Blog</a>
       </div> 
+
+    </div>
   </div>
+  
   <div class='content'>
     @yield('content')
   </div>
+
   <div class="footer">
     <p>footer stuff</p>
     <p>footer stuff</p>
     <p>footer stuff</p>
   </div>
+
 </body>
 </html>

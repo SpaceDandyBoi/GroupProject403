@@ -2,9 +2,9 @@
 
 @section('content')
 
-<h1 style="margin-left: 20px;">
+<p class="pageTitle"">
   {{$heading}}
-</h1>
+</p>
 <div class="game_card_container">
   @foreach($games as $game)
   <div class="game_card">

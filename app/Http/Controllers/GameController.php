@@ -96,12 +96,12 @@ class GameController extends Controller
         if (empty($gameArray)) {
 
             return view('games', [
-                'heading' => 'searched',
+                'heading' => 'Could not Find: '.request('search'),
                 'games' => $gameArray
             ]);
         }
         return view('games', [
-            'heading' => 'searched',
+            'heading' => 'Results For: '.request('search'),
             'games' => $gameArray
         ]);
     }

@@ -3,6 +3,6 @@
 
 @section('content')
 
-<H1>Home Page</H1>
+<p class="pageTitle">Home Page</p>
 
 @endsection
