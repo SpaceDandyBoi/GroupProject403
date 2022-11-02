@@ -34,7 +34,7 @@
     </div>
     <div class="game_card_info_title">
       <h2 class='game_card_info_title_text'>
-        <a class="underline_link" href="/game/{{$game['slug']}}">{{$game['name']}} </a>
+        <a href="/game/{{$game['slug']}}">{{$game['name']}} </a>
       </h2>
     </div>
   </div>

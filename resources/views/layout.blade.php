@@ -23,13 +23,6 @@
       text-decoration: none;
     }
     a:hover {
-      text-decoration: none;
-    }
-    .underline_link{
-      text-decoration: none;
-    }
-    .underline_link:hover {
-      text-decoration: underline;
     }
     .header {
       background-color: rgb(45, 45, 45);
@@ -93,9 +86,9 @@
     .header_links_text {
       display: inline;
       padding: 5px;
-      font-weight: normal;
       padding-bottom: 0;
       border-bottom: 5px;
+      border-radius: 15%;
       transition-duration: 0.3s;
     }
     .header_links_text:hover {
@@ -107,13 +100,14 @@
     .dropdown .dropbtn {
       font-size: 23px;
       color: white;
+      background-color: transparent;
+      border-style: none;
+      font-family:'verdana';
       display: inline;
       padding: 5px;
       border-bottom: 5px;
+      border-radius: 15%;
       transition-duration: 0.3s;
-      margin: 0;
-      font-weight: normal;
-
 
       /* font-size: 150%;
       border: none;
@@ -135,7 +129,7 @@
       display: none;
       position: absolute;
       background-color: #f9f9f9;
-      min-width: 17em;
+      min-width: 160px;
       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
       z-index: 1;
     }
@@ -145,8 +139,6 @@
       float: none;
       color: black;
       padding: 12px 16px;
-      margin-left: -10px;
-      margin-right: -10px;
       text-decoration: none;
       display: block;
       text-align: center;
@@ -330,13 +322,9 @@
             <a href='/'> Home </a>
           </h2>
           <div class="dropdown">
-            <h2 class='dropbtn' id="header_link_games">
-              <a href="/games/1"> Games </a>
-              {{-- <i class="fa fa-caret-down"></i> --}}
-            </h2>
-            {{-- <button class="dropbtn" onclick="location.href='/games/1'">Games
+            <button class="dropbtn" onclick="location.href='/games/1'"><b>Games</b>
               <i class="fa fa-caret-down"></i>
-            </button> --}}
+            </button>
             <div class="dropdown-content">
               <a href="/highestRatedGames">Highest score</a>
               <a href="/mostPopularGames">Most Popular</a>
