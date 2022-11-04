@@ -66,7 +66,6 @@
       display: inline-block;
       padding: 5px;
       margin: 5px;
-      border-radius: 15%;
       transition-duration: 0.3s;
     }
     .header_top_login_register_links:hover {
@@ -211,11 +210,11 @@
       display: flex;
       flex-wrap: wrap;
       width: 100%;
-      height: 10cm;
+      height: 45em;
     }
     .game_galary_top_left {
       height: 90%;
-      width: 20%;
+      width: 10%;
       display: inline-block;
       display: flex;
       justify-content: center;
@@ -223,29 +222,42 @@
     }
     .game_galary_top_middle {
       height: 90%;
-      width: 60%;
+      width: 80%;
       display: inline-block;
       display: flex;
       justify-content: center;
       align-items: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      margin-top: 3em;
     }
     .game_galary_top_middle_pic{
       height: 100%;
     }
     .game_galary_top_right {
       height: 90%;
-      width: 20%;
+      width: 10%;
       display: inline-block;
       display: flex;
       justify-content: center;
       align-items: center;
     }
     .game_galary_top_arrows {
-      height: 25%;
+      height: 5em;
       opacity: 0.5;
+      margin-top: 5em;
+      padding: 5px;
+      border-radius: 1em;
+      border-style: none;
+    }
+    .game_galary_top_arrows:hover {
+      border-style: solid;
+      cursor: pointer;
     }
     .game_galary_bottom {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       align-items: center;
       height: 3cm;
@@ -258,6 +270,7 @@
     }
     .game_galary_bottom_pics:hover {
       border-style: solid;
+      cursor: pointer;
     }
     .round{
       font-size: 200%;
@@ -266,9 +279,6 @@
     .round:hover{
       background-color: #ddd;
       color: black;
-    }
-    .footer{
-      background-color: rgb(45, 45, 45);
     }
     .search-container {
       float: right;
@@ -279,7 +289,13 @@
       margin-left: 5%;
       font-size: 300%
     }
-
+    .footer {
+      background-color: rgb(45, 45, 45);
+      height: 2cm;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
     
 
 </style>
@@ -339,11 +355,10 @@
     @yield('content')
   </div>
 
-  <div class="footer">
-    <p>footer stuff</p>
-    <p>footer stuff</p>
-    <p>footer stuff</p>
-  </div>
+  <footer class='footer'>
+    <img src="https://www.w3.org/Icons/valid-xhtml10">
+    <img src="https://jigsaw.w3.org/css-validator/images/vcss-blue">
+  </footer>
 
 </body>
 </html>

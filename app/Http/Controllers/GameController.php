@@ -105,4 +105,12 @@ class GameController extends Controller
             'games' => $gameArray
         ]);
     }
+
+    public static function DecodePics($pics){
+        $jsonPics = "";
+        foreach($pics as $pic){
+          $jsonPics = $jsonPics.",".$pic['image'];
+        }
+        return $jsonPics;
+      }
 }
