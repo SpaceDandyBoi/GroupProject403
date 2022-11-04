@@ -295,6 +295,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      margin-top: 3%;
     }
     
 

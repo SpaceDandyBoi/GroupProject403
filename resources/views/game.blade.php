@@ -138,5 +138,14 @@
             </div>
           </div>
         </div>
+
+
+        
+        <div id="commentBox" name="commentBox">
+          Comment section
+        </div>
+
+
+
     </div>
 @endsection
