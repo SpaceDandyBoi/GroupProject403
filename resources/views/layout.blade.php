@@ -40,6 +40,15 @@
       color: white;
       text-decoration: none;
     }
+    a:hover {
+      text-decoration: none;
+    }
+    .underline_link{
+      text-decoration: none;
+    }
+    .underline_link:hover {
+      text-decoration: underline;
+    }
     .header {
       background-color: rgb(45, 45, 45);
       height: 5cm;
@@ -204,13 +213,16 @@
     }
     .game_galary{
       background-color: rgba(0, 0, 0, 0.3);
-      border-radius: 3%;
+      border-radius: 1em; /* don't change */
+      height: fit-content;
+      margin-bottom: 1cm;
     }
     .game_galary_top {
       display: flex;
       flex-wrap: wrap;
       width: 100%;
-      height: 45em;
+      margin-top: 1cm;
+      height: 90vh;
     }
     .game_galary_top_left {
       height: 90%;
