@@ -129,7 +129,11 @@ class GameController extends Controller
             )->post($endpoint);
         $gameInfo = json_decode($game, true);
         $summary = $gameInfo[0]['summary'];
-        $video = "https://www.youtube.com/embed/".$gameInfo[0]['videos'][0]['video_id']."?controls=1";
+        if (empty($gameInfo[0]['videos'])){
+            $video = "";
+          } else {
+            $video = "https://www.youtube.com/embed/".$gameInfo[0]['videos'][0]['video_id']."?controls=1";
+          }
         return [$summary, $video];
     }
 

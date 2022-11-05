@@ -1,7 +1,11 @@
 @extends('layout')
 <?php use App\Http\Controllers\GameController;
 $pics = json_decode($game['short_screenshots'], true);
-$pics[0]['image'] = asset('/images/icons/play_button.svg');
+if(empty($gameExtra[1])){
+    $pics[0]['image'] = asset('/images/icons/no_video.svg');
+} else {
+    $pics[0]['image'] = asset('/images/icons/play_button.svg');
+}
 $jsonPics = GameController::DecodePics($pics);
 ?>
 <style>
@@ -53,6 +57,7 @@ $jsonPics = GameController::DecodePics($pics);
 
     #game_galary_top_middle_vid {
         display: block;
+        border-style: none;
     }
     .game_title_info_container{
     height: fit-content;
