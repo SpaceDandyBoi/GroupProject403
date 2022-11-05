@@ -23,8 +23,8 @@
       elseif ($game['rating'] >= 3) {$rating_color = '#ffa534';}
       else {$rating_color = '#ff4545';}
       ?>
-      <div class="game_card_info_rating" style="background-color: {{$rating_color}};">
-        <h3 class="game_card_info_rating_text"> {{$game['rating']}} </h3>
+      <div class="game_card_info_rating" style="background-color: {{$rating_color}}; font-size: 75%;">
+        <h3 class="game_card_info_rating_text" style="margin-top: 10%"> {{$game['rating']}} </h3>
       </div>
     </div>
     <div class="game_card_info_title">
