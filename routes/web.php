@@ -26,5 +26,11 @@ Route::get('/highestRatedGames', [GameController::class, 'showHighestRated']) ;
 //going into longest games page
 Route::get('/longestGames', [GameController::class, 'showLongestGames']) ;
 
-//going into longest games page
+//going to search result
 Route::get('/search', [GameController::class, 'searchGames']) ;
+
+//going into feedback Page
+Route::get('/feedback', [feedbackController::class, 'feedback']) ;
+
+//going into feedback Page
+Route::post('/feedback', [feedbackController::class, 'storeFeedback'])->name("storeFeedback") ;

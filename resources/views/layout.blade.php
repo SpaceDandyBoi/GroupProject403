@@ -357,7 +357,7 @@
 
         </div>
 
-        <a href="/">Charts</a>
+        <a href="/feedback">Feedback</a>
         <a href="http://abaubaid.info/blog/">Blog</a>
       </div> 
 
