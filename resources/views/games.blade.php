@@ -1,92 +1,7 @@
 @extends('layout')
 
-@section("head")
-
-@endsection
-
 @section('content')
-<p class="mt-4 mb-2 ms-2 fs-2 text-light">
-  {{$heading}}
-</p>
 
-<div class="container-fluid">
-  <div class="row mt-2 g-5">
-    @foreach($games as $game)
-    <div class="col-3">
-      <div class="card"  style="background:rgb(45, 45, 45)">
-        <img class='card-img-top h-100' src="{{$game['background_image']}}">
-        <div class="card-body p-3">
-          <div class="d-inline">
-            @foreach(json_decode($game['parent_platforms'], true) as $platform)
-            <img class="d-inline" style="height: 20px; margin: 2px;" src="{{asset('/images/icons/'.$platform['platform']['slug'].'.svg')}}"
-            alt="{{$platform['platform']['name']}}">
-            @endforeach
-          </div>
-          <?php
-          if($game['rating'] >= 4.5) {$rating_color = '#57e32c';}
-          elseif ($game['rating'] >= 4) {$rating_color = '#b7dd29';}
-          elseif ($game['rating'] >= 3.5) {$rating_color = '#ffe234';}
-          elseif ($game['rating'] >= 3) {$rating_color = '#ffa534';}
-          else {$rating_color = '#ff4545';}
-          ?>
-          <div class="float-end d-inline" style="border-radius: 5px; height: 35px; width: 43px; background-color: {{$rating_color}}; ">
-            <h3 class="mt-2 text-center fs-6 fw-bolder" style="color:rgb(35, 35, 35);font-size: 75%;"> {{$game['rating']}} </h3>
-          </div>
-        </div>
-        <div class="card-title p-1">
-          <h2 class=''>
-            <a class="text-light h4 text-decoration-none fw-bold" href="/game/{{$game['slug']}}">{{$game['name']}} </a>
-          </h2>
-        </div>
-      </div>
-    </div>
-    @endforeach
-  </div>
-</div>
-
-<div style="align-content: center; text-align: center; ">
-  <?php
-  $curPageName = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-  $curPageName = substr($curPageName, strrpos($curPageName, '/') + 1);
-  $int = (int)$curPageName;
-  $previous;
-  $next;
-  if($int-1>0){
-      $previous = $int-1;
-  }else {
-      $previous = $int;
-  }
-  if ($int+1<=500) {
-      $next = $int+1;
-  }else {
-      $next = $int;
-  }
-  $Sprevious= "/games/{$previous}";
-  $Snext= "/games/{$next}";
-  
-  
-?>
-
-<a href={{$Sprevious}} class="round" style="font-size: 200%; padding: 0.5% 1%;">&#8249;</a>
-<a href={{$Snext}} class="round" style="font-size: 200%; padding: 0.5% 1%;">&#8250;</a>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--
 <p class="pageTitle"">
   {{$heading}}
 </p>
@@ -147,7 +62,6 @@
 <a href={{$Sprevious}} class="round">&#8249;</a>
 <a href={{$Snext}} class="round">&#8250;</a>
 </div>
--->
 
 
 @endsection
