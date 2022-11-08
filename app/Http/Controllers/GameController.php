@@ -128,7 +128,12 @@ class GameController extends Controller
             where slug = \"{$slug}\";", 'txt'
             )->post($endpoint);
         $gameInfo = json_decode($game, true);
-        $summary = $gameInfo[0]['summary'];
+        
+        if (empty($gameInfo[0]['summary'])){
+            $summary = "There is no summary for this game.";
+          } else {
+            $summary = $gameInfo[0]['summary'];
+          }
         if (empty($gameInfo[0]['videos'])){
             $video = "";
           } else {
