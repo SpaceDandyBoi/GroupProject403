@@ -15,6 +15,11 @@ class feedbackController extends Controller
     public function storeFeedback(Request $request){
 
         echo $request;
+
+        if (feedbacks::where('email', '=', $request->email)->exists()) {
+            return back() -> with('error', "Sorry this email has already been used"); 
+        }
+
         echo $request->first_name;
 
         $post = new feedbacks;
