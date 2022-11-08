@@ -4,6 +4,7 @@ use App\Http\Controllers\GameController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\Games;
+use App\Http\Controllers\feedbackController;
 
 
 //home page
@@ -28,3 +29,9 @@ Route::get('/longestGames', [GameController::class, 'showLongestGames']) ;
 
 //going into longest games page
 Route::get('/search', [GameController::class, 'searchGames']) ;
+
+//going into feedback Page
+Route::get('/feedback', [feedbackController::class, 'feedback']) ;
+
+//going into feedback Page
+Route::post('/feedback', [feedbackController::class, 'storeFeedback'])->name("storeFeedback") ;
