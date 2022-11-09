@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\feedbackController;
+use App\Http\Controllers\ResumeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\Games;
@@ -35,3 +36,11 @@ Route::get('/feedback', [feedbackController::class, 'feedback']) ;
 
 //going into feedback Page
 Route::post('/feedback', [feedbackController::class, 'storeFeedback'])->name("storeFeedback") ;
+
+//going into Contact Us Page
+Route::get('/contactUs', function(){
+    return view("contactUs");
+});
+
+//going into resume Page
+Route::get('/resume/{name}', [ResumeController::class, 'show']);

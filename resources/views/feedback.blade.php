@@ -347,7 +347,7 @@
         </form>
       </div>
 
-      <div class="_navbar" style="margin-left: 40%;">
+      <div class="_navbar" style="margin-left: 30%;">
         <a href="/">Home</a>
 
         <div class="_dropdown">
@@ -364,6 +364,23 @@
         </div>
 
         <a href="/feedback">Feedback</a>
+
+        <a href="/contactUs">Contact Us</a>
+
+        <div class="_dropdown">
+          <button class="_dropbtn" onclick="location.href=''">Developers
+            <i class="fa fa-caret-down"></i>
+          </button>
+
+          <div class="_dropdown-content">
+            <a href="/resume/Mohammed_Alzahrani">Mohammed Alzahrani</a>
+            <a href="/resume/Khalid_Algamdi">Khalid Algamdi</a>
+            <a href="/resume/Anas_Baubaid">Anas Baubaid</a>
+            <a href="/resume/Abdullah_Fadaag">Abdullah Fadaag</a>
+          </div>
+
+        </div>
+
         <a href="http://abaubaid.info/blog/">Blog</a>
       </div> 
 
