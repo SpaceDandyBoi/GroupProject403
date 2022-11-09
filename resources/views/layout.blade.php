@@ -63,8 +63,10 @@
     .header_top_logo {
       float: left;
       width: fit-content;
+      overflow:hidden;
     }
     .header_top_logo_pic {
+      overflow:hidden;
     }
     .header_top_login_register {
       float: right;
@@ -358,6 +360,8 @@
 
         </div>
 
+        <a href="/charts">Charts</a>
+
         <a href="/feedback">Feedback</a>
 
         <a href="/contactUs">Contact Us</a>
@@ -368,7 +372,7 @@
           </button>
 
           <div class="dropdown-content">
-            <a href="/resume/Khalid_Algamdi">Khalid Algamdi</a>
+            <a href="/resume/Khalid_Alghamdi">Khalid Al-Ghamdi</a>
             <a href="/resume/Anas_Baubaid">Anas Baubaid</a>
             <a href="/resume/Abdullah_Fadaag">Abdullah Fadaag</a>
             <a href="/resume/Mohammad_Alzahrani">Mohammed Alzahrani</a>

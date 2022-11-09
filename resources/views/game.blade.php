@@ -159,30 +159,14 @@ $jsonPics = GameController::DecodePics($pics);
                 </div>
                 <div class="game_title_info_container_right_bottom">
                   <p class="game_summary"> {{$gameExtra[0]}} </p>
-                  <p class="game_release"> Released: {{ $game['released'] }} </p>
+                  <p class="game_release" style="display: inline"> Released: {{ $game['released'] }} </p>
+                  @foreach(json_decode($game['parent_platforms'], true) as $platform)
+                  <img class="game_card_info_platforms_icons" src={{asset('/images/icons/'.$platform['platform']['slug'].'.svg')}}
+                  alt={{$platform['platform']['name']}}>
+                  @endforeach
                 </div>
               </div>
             </div>
-
-
-
-
-            
-            {{-- <div style="flex: 1; overflow:hidden;">
-                <span id="Game_Name" name="Game_Name">
-                    {{ $game['name'] }}
-                </span>
-                
-                <div id="ratingBox" name="ratingBox"
-                    style="background-color: {{ $rating_color }}; border: 2% solid {{ $rating_color }};">
-                    {{ $game['rating'] }}
-                </div>
-                <br>
-                <div style="height: 325px; width: 500px;">
-                    <img id="imageGame" name="imageGame" src={{ $game['background_image'] }}>
-                </div>
-                <p>Released: {{ $game['released'] }}</p>
-            </div> --}}
 
             <div style="flex: 2;">
             </div>

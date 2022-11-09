@@ -9,9 +9,7 @@ use App\Models\Games;
 
 
 //home page
-Route::get('/', function() {
-    return view('Home');
-});
+Route::get('/', [GameController::class, 'homePage']) ;
 
 //going to a specific page
 Route::get('/games/{page}', [GameController::class, 'index']);
@@ -30,6 +28,9 @@ Route::get('/longestGames', [GameController::class, 'showLongestGames']) ;
 
 //going to search result
 Route::get('/search', [GameController::class, 'searchGames']) ;
+
+//going to Charts page
+Route::get('/charts', [GameController::class, 'showMostAddedGames']) ;
 
 //going into feedback Page
 Route::get('/feedback', [feedbackController::class, 'feedback']) ;

@@ -2,7 +2,7 @@
 
 @section('content')
 
-<p class="pageTitle"">
+<p class="pageTitle">
   {{$heading}}
 </p>
 <div class="game_card_container">

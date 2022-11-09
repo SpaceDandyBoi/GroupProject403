@@ -8,6 +8,23 @@ use Illuminate\Support\Facades\Http;
 
 class GameController extends Controller
 {
+
+    //show home page
+    public function homePage(){
+        $gameArray = ["red-dead-redemption-2","death-stranding","the-walking-dead-the-telltale-definitive-series","minecraft"];
+        $GameRow=[];
+        $GameExtra=[];
+        for ($i=0; $i < 4; $i++) { 
+            $GameRow1 = Games::where('slug', '=', $gameArray[$i])->get();
+            $GameRow[$i] = $GameRow1[0];
+            $GameExtra[$i] = self::getGameInfo($gameArray[$i]);
+        }
+        return view('Home', [
+            'games' => $GameRow,
+            'gameExtra' => $GameExtra
+        ]);
+    }
+
     //show game page
     public function index($page){
         return view('games', [
@@ -45,6 +62,15 @@ class GameController extends Controller
             'games' => $Pgames
         ]);
     } 
+
+        //show most Adedd games
+        public function showMostAddedGames(){
+            $gameLibrary = Games::select()->get()->sortByDesc("added");
+            return view('charts', [
+                'heading' => 'Game Order By Most Downloaded',
+                'games' => $gameLibrary
+            ]);
+        } 
 
     //show highest rated games
     public function showHighestRated(){
@@ -92,12 +118,11 @@ class GameController extends Controller
         $Pgames= Games::where('name', 'like', '%' . request('search') . '%')
                     ->orWhere('slug', 'like', '%' . request('search') . '%')
                     ->orWhere('tags', 'like', '%' . request('search') . '%')->get();
-        $gameArray = array($Pgames[0]);
+        $gameArray = [];
         for ($x = 0; $x < count($Pgames); $x++){
             $gameArray[$x] = $Pgames[$x];
         }
         if (empty($gameArray)) {
-
             return view('games', [
                 'heading' => 'Could not Find: '.request('search'),
                 'games' => $gameArray
