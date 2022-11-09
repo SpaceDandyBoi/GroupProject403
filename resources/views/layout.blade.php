@@ -323,10 +323,10 @@
 
       <div class="header_top_login_register">
         <h3 class='header_top_login_register_links'>
-          <a href=''> Login </a>
+          <a href="/login"> Login </a>
         </h3>
         <h3 class='header_top_login_register_links'>
-          <a href=''> Register </a>
+          <a href="/register"> Register </a>
         </h3>
       </div>
 

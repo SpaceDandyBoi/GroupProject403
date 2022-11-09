@@ -45,3 +45,5 @@ Route::get('/contactUs', function(){
 
 //going into resume Page
 Route::get('/resume/{name}', [ResumeController::class, 'show']);
+
+Route::get('/register',[UserController::class,'create']);
