@@ -448,7 +448,7 @@
           <div class="dropdown-content">
             <a href="/resume/Khalid_Alghamdi">Khalid Al-Ghamdi</a>
             <a href="/resume/Anas_Baubaid">Anas Baubaid</a>
-            <a href="/resume/Abdullah_Fadag">Abdullah Fadag</a>
+            <a href="/resume/Abdullah_Fadaq">Abdullah Fadaq</a>
             <a href="/resume/Mohammed_Alzahrani">Mohammed Alzahrani</a>
           </div>
 

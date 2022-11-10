@@ -110,7 +110,7 @@
     <td>1936415</td>
   </tr>
   <tr>
-    <td><a href="/resume/Abdullah_Fadag"> Abdullah Fadag</a></td>
+    <td><a href="/resume/Abdullah_Fadaq"> Abdullah Fadaq</a></td>
     <td>1943267</td>
   </tr>
 </table>
