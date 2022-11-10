@@ -1,105 +1,139 @@
 @extends('layout')
 
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  padding: 16px;
+  background-color: white;
+}
+
+input[type=text], input[type=email], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+.registerbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+a {
+  color: dodgerblue;
+}
+
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+
+</style>    
+
 
 @section('content')
 
-<div
-class="bg-gray-50 border border-gray-200 p-10 rounded max-w-lg mx-auto mt-24"
->
-<header class="text-center">
-    <h2 class="text-2xl font-bold uppercase mb-1">
-        Register
-    </h2>
-    <p class="mb-4">Create an account </p>
-</header>
 
 <form method="POST" action="/users">
     @csrf
-    <div class="mb-6">
-        <label for="name" class="inline-block text-lg mb-2">    
-            Name
-        </label>
+
+<div class="container">
+
+    <h1>Register</h1>
+    <p>Create an account.</p>
+    <hr>
+
+
+
+    <!-- name section -->
+        <label for="name"> <b> Name </b> </label>
         <input
-            type="text"
-            class="border border-gray-200 rounded p-2 w-full"
-            name="name" value = {{old('name')}}
-        />
+            type="text" 
+            placeholder="enter your name"          
+            name="name"  />
 
         @error('name')
             <p class="text-red-500 text-xs mt-1"> {{$message}} </p>
         @enderror
-    </div>
+    
 
-    <div class="mb-6">
-        <label for="email" class="inline-block text-lg mb-2"
-            >Email</label
-        >
+    <!-- email section -->
+        <label for="email"> <b>Email <b> </label>
         <input
             type="email"
-            class="border border-gray-200 rounded p-2 w-full"
-            name="email" value = {{old('email')}}
-        />
+            placeholder="enter your email"
+            name="email"  />
         
         @error('email')
             <p class="text-red-500 text-xs mt-1"> {{$message}} </p>
         @enderror
-    </div>
+    
 
-    <div class="mb-6">
-        <label
-            for="password"
-            class="inline-block text-lg mb-2"
-        >
-            Password
-        </label>
+    <!-- password section -->
+        <label for="password"> <b>Password </b> </label>
         <input
             type="password"
-            class="border border-gray-200 rounded p-2 w-full"
-            name="password" value = {{old('password')}}
-        />
+            placeholder="enter your password"
+            name="password"  />
+
         @error('password')
             <p class="text-red-500 text-xs mt-1"> {{$message}} </p>
          @enderror
 
-    </div>
+    
 
-    <div class="mb-6">
-        <label
-            for="password2"
-            class="inline-block text-lg mb-2"
-        >
-            Confirm Password
-        </label>
+    <!-- password confirmation section -->
+        <label for="password2"> <b>Confirm Password </b> </label>
         <input
             type="password"
-            class="border border-gray-200 rounded p-2 w-full"
-            name="password_confirmation" value = {{old('password_confirmation')}}
-        />
+            placeholder="please confirm your password"
+            name="password_confirmation"  />
 
         @error('password_confirmation')
             <p class="text-red-500 text-xs mt-1"> {{$message}} </p>
          @enderror
 
-    </div>
+    
 
-    <div class="mb-6">
+    <!-- submit button -->
         <button
             type="submit"
-            class="bg-laravel text-white rounded py-2 px-4 hover:bg-black"
-        >
-            Sign Up
-        </button>
-    </div>
+            class="registerbtn"> Sign Up </button>
+    
 
-    <div class="mt-8">
-        <p>
-            Already have an account?
-            <a href="/login" class="text-laravel"
-                >Login</a
-            >
-        </p>
+</div>
+
+
+    <div class="container signin">
+        <p>Already have an account? <a href="/login" class="text-laravel"> Login</a> </p>
     </div>
 </form>
-</div>
+
 
  @endsection
