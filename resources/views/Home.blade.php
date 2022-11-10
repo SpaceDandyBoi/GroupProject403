@@ -1,4 +1,14 @@
 @extends('layout')
+<?php
+  $vids=[];
+  $pics=[];
+  $jsonPics="";
+  foreach($games as $key=>$game){
+    $vids[$key] = $gameExtra[$key][1];
+    $pics[$key] = $game['background_image'];
+    $jsonPics = $jsonPics.",".$game['background_image'];
+  }
+?>
 <style>
     .Game_Container {
         margin-left: 5%;
@@ -86,6 +96,74 @@
 
 <p class="pageTitle" style="margin-top: 5%">recommended Games</p>
 
+{{-- #################################################################################### --}}
+
+<script type="text/javascript">
+  var jsonPics = "{{ $jsonPics }}";
+  jsonPics = jsonPics.substring(1);
+  Pics = jsonPics.split(",");
+  picNum = 0;
+  picArr = Pics.length - 1;
+  prevPic = 0;
+
+  function UpdateGalary(action) {
+      if (action == "next") {
+          if ((picNum + 1) > picArr) {
+              picNum = 0;
+          } else {
+              picNum = picNum + 1;
+          }
+      } else if (action == "previous") {
+          if ((picNum - 1) < 0) {
+              picNum = picArr;
+          } else {
+              picNum = picNum - 1;
+          }
+      } else {
+          picNum = parseInt(action);
+      }
+      document.getElementById("game_galary_top_middle_vid_" + prevPic).style = "display: none";
+      document.getElementById("game_galary_top_middle_vid_" + picNum).style = "display: block";
+      document.getElementById("game_galary_bottom_pics_" + prevPic).style = "border-style: none";
+      document.getElementById("game_galary_bottom_pics_" + picNum).style = "border-style: solid";
+      prevPic = picNum;
+
+  };
+</script>
+{{-- ################################## --}}
+<div class="game_galary">
+  <div class="game_galary_top">
+      <div class="game_galary_top_left">
+          <img class="game_galary_top_arrows" src={{ asset('/images/icons/rounded_left_arrow.svg') }}
+              onclick="UpdateGalary('previous')">
+      </div>
+      <div class="game_galary_top_middle" id="game_galary_top_middle">
+        @foreach($games as $key=>$game)
+          @if($key == 0)
+            <iframe class="game_galary_top_middle_pic" id="{{'game_galary_top_middle_vid_'.$key}}" width="100%"
+                height="100%" src="{{ $vids[$key] }}">
+            </iframe>
+          @else
+            <iframe class="game_galary_top_middle_pic" id="{{'game_galary_top_middle_vid_'.$key}}" width="100%"
+              height="100%" src="{{ $vids[$key] }}" style="display: none">
+            </iframe>
+          @endif
+        @endforeach
+      </div>
+      <div class="game_galary_top_right">
+          <img class="game_galary_top_arrows" src={{ asset('/images/icons/rounded_right_arrow.svg') }}
+              onclick="UpdateGalary('next')">
+      </div>
+  </div>
+  <div class="game_galary_bottom">
+      @foreach ($pics as $key => $pic)
+          <img class="game_galary_bottom_pics" id="{{ 'game_galary_bottom_pics_' . $key }}"
+              src="{{ $pic }}" onclick="UpdateGalary('{{ $key }}')">
+      @endforeach
+  </div>
+</div>
+
+{{-- #################################################################################### --}}
 @foreach($games as $game)
     <div class="Game_Container">
 
