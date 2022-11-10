@@ -90,9 +90,31 @@
 
 @section('content')
 
-<p class="pageTitle">Home Page</p>
 
-<p style="margin-left: 10%">This Is Our CPCS403 Project Please Enjoy</p>
+<p class="pageTitle">Home Page</p>
+<p style="margin-left: 10%">This Is Our CPCS403 Project Please Enjoy:</p>
+<div class="GtableBox">
+<table style="width: 100%">
+  <th>Developer Name</th>
+  <th>Developer ID</th>
+  <tr>
+    <td><a href="/resume/Khalid_Alghamdi"> Khalid Alghamdi</a></td>
+    <td>1936811</td>
+  </tr>
+  <tr>
+    <td><a href="/resume/Mohammed_Alzahrani"> Mohammed Alzahrani</a></td>
+    <td>1845613</td>
+  </tr>
+  <tr>
+    <td><a href="/resume/Anas_Baubaid"> Anas Baubaid</a></td>
+    <td>1936415</td>
+  </tr>
+  <tr>
+    <td><a href="/resume/Abdullah_Fadag"> Abdullah Fadag</a></td>
+    <td>1943267</td>
+  </tr>
+</table>
+</div>
 
 <p class="pageTitle" style="margin-top: 5%">recommended Games</p>
 
@@ -176,9 +198,7 @@
               </div>
               <div class="game_title_info_container_right">
                 <div class="game_title_info_container_right_top">
-                  <span id="Game_Name" name="Game_Name">
-                    {{ $game['name'] }}
-                  </span>
+                  <a class="underline_link" href="/game/{{$game['slug']}}"><span id="Game_Name" name="Game_Name">{{ $game['name'] }}</span> </a>
                   <?php
                   if ($game['rating'] >= 4.5) {
                       $rating_color = '#57e32c';

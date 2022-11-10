@@ -2,26 +2,6 @@
 
 @section('content')
 
-<style>
-  .GtableBox{
-    align-content: center; 
-    text-align: center; 
-    margin-left: 25%; 
-    margin-right: 25%;
-  }
-  table, th, td{
-    border:1px solid black;
-  }
-  tr:hover {
-    background-color: rgb(192, 0, 0);
-    color: black;
-  }
-  th{
-    background-color: aquamarine;
-    color: black;
-  }
-</style>
-
 <p class="pageTitle">
   {{$heading}}
 </p>

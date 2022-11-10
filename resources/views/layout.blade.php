@@ -351,6 +351,23 @@
   box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
   outline: 0;
 }
+.GtableBox{
+    align-content: center; 
+    text-align: center; 
+    margin-left: 25%; 
+    margin-right: 25%;
+  }
+  table, th, td{
+    border:1px solid black;
+  }
+  tr:hover {
+    background-color: rgb(192, 0, 0);
+    color: black;
+  }
+  th{
+    background-color: aquamarine;
+    color: black;
+  }
     
 
 </style>
@@ -385,7 +402,10 @@
       </div>
 
       <div class='header_top_logo'>
-        <img class='header_top_logo_pic' src={{asset('/images/logo.png')}}>
+        <img alt="logo" class='header_top_logo_pic' usemap="#Mmap" src={{asset('/images/logo.png')}}>
+        <map name="Mmap">
+          <area shape="default" href="/">
+        </map>
       </div>
 
       <div class='header_top_title'>
@@ -428,7 +448,7 @@
           <div class="dropdown-content">
             <a href="/resume/Khalid_Alghamdi">Khalid Al-Ghamdi</a>
             <a href="/resume/Anas_Baubaid">Anas Baubaid</a>
-            <a href="/resume/Abdullah_Fadaag">Abdullah Fadaag</a>
+            <a href="/resume/Abdullah_Fadag">Abdullah Fadag</a>
             <a href="/resume/Mohammed_Alzahrani">Mohammed Alzahrani</a>
           </div>
 
