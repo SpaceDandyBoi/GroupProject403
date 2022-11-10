@@ -64,27 +64,15 @@ a {
 @section('content')
 
 
-<form method="POST" action="/users">
+<form method="POST" action="/users/authenticate">
     @csrf
 
 <div class="container">
 
-    <h1>Register</h1>
-    <p>Create an account.</p>
+    <h1>Login</h1>
+    <p>Log into your account.</p>
     <hr>
 
-
-
-    <!-- name section -->
-        <label for="name"> <b> Name </b> </label>
-        <input
-            type="text" 
-            placeholder="enter your name"          
-            name="name" value="{{old('name')}}" />
-
-        @error('name')
-            <p class="text-red-500 text-xs mt-1"> {{$message}} </p>
-        @enderror
     
 
     <!-- email section -->
@@ -92,7 +80,7 @@ a {
         <input
             type="email"
             placeholder="enter your email"
-            name="email" value="{{old('email')}}" />
+            name="email"  value="{{old('email')}}" />
         
         @error('email')
             <p class="text-red-500 text-xs mt-1"> {{$message}} </p>
@@ -104,38 +92,24 @@ a {
         <input
             type="password"
             placeholder="enter your password"
-            name="password"  value="{{old('password')}}" />
+            name="password" value="{{old('password')}}" />
 
         @error('password')
             <p class="text-red-500 text-xs mt-1"> {{$message}} </p>
          @enderror
-
-    
-
-    <!-- password confirmation section -->
-        <label for="password2"> <b>Confirm Password </b> </label>
-        <input
-            type="password"
-            placeholder="please confirm your password"
-            name="password_confirmation"  value="{{old('password_confirmation')}}" />
-
-        @error('password_confirmation')
-            <p class="text-red-500 text-xs mt-1"> {{$message}} </p>
-         @enderror
-
     
 
     <!-- submit button -->
         <button
             type="submit"
-            class="registerbtn"> Sign Up </button>
+            class="registerbtn"> Sign In </button>
     
 
 </div>
 
 
     <div class="container signin">
-        <p style="color: black">Already have an account? <a style="color: #04AA6D" href="/login" class="text-laravel"> Login</a> </p>
+        <p style="color: black">Don't have an account? <a style="color: #04AA6D" href="/register" class="text-laravel"> Register</a> </p>
     </div>
 </form>
 
