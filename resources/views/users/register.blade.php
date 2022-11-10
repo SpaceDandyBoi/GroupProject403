@@ -8,7 +8,11 @@
 
 .container {
   padding: 16px;
-  background-color: white;
+  margin-top: 3%;
+  margin-bottom: 1%;
+  margin-left: 25%;
+  margin-right: 25%;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 input[type=text], input[type=email], input[type=password] {
@@ -131,7 +135,7 @@ a {
 
 
     <div class="container signin">
-        <p>Already have an account? <a href="/login" class="text-laravel"> Login</a> </p>
+        <p style="color: black">Already have an account? <a style="color: #04AA6D" href="/login" class="text-laravel"> Login</a> </p>
     </div>
 </form>
 
