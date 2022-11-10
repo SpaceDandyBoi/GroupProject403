@@ -102,6 +102,10 @@
     ._navbar {
       overflow: hidden;
       font-family: Arial;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
     }
 
     /* Links inside the navbar */
@@ -347,7 +351,7 @@
         </form>
       </div>
 
-      <div class="_navbar" style="margin-left: 30%;">
+      <div class="_navbar" style="margin-left:20%">
         <a href="/">Home</a>
 
         <div class="_dropdown">
@@ -363,6 +367,8 @@
 
         </div>
 
+        <a href="/charts">Charts</a>
+
         <a href="/feedback">Feedback</a>
 
         <a href="/contactUs">Contact Us</a>
@@ -373,10 +379,10 @@
           </button>
 
           <div class="_dropdown-content">
-            <a href="/resume/Mohammed_Alzahrani">Mohammed Alzahrani</a>
-            <a href="/resume/Khalid_Algamdi">Khalid Algamdi</a>
+            <a href="/resume/Khalid_Alghamdi">Khalid Al-Ghamdi</a>
             <a href="/resume/Anas_Baubaid">Anas Baubaid</a>
             <a href="/resume/Abdullah_Fadaag">Abdullah Fadaag</a>
+            <a href="/resume/Mohammed_Alzahrani">Mohammed Alzahrani</a>
           </div>
 
         </div>
