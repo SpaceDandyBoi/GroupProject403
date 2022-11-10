@@ -322,12 +322,26 @@
     <div class='top_header'>
 
       <div class="header_top_login_register">
+
+        @auth             
+        <span style="text-transform:uppercase" > Welcome {{auth()->user()->name}} </span>
+
+        <form method="POST" action="/logout"> 
+          @csrf
+          <button type="submit"> logout </button>
+         </form>
+
+        @else
+
+
         <h3 class='header_top_login_register_links'>
           <a href="/login"> Login </a>
         </h3>
         <h3 class='header_top_login_register_links'>
           <a href="/register"> Register </a>
         </h3>
+
+        @endauth
       </div>
 
       <div class='header_top_logo'>

@@ -1,11 +1,12 @@
 <?php
 
-use App\Http\Controllers\GameController;
-use App\Http\Controllers\feedbackController;
-use App\Http\Controllers\ResumeController;
+use App\Models\Games;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Models\Games;
+use App\Http\Controllers\GameController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ResumeController;
+use App\Http\Controllers\feedbackController;
 
 
 //home page
@@ -46,4 +47,12 @@ Route::get('/contactUs', function(){
 //going into resume Page
 Route::get('/resume/{name}', [ResumeController::class, 'show']);
 
+//show registeration form
 Route::get('/register',[UserController::class,'create']);
+
+
+//create new user
+Route::post('/users',[UserController::class,'store']);
+
+//Log user out
+Route::post('/logout',[UserController::class,'logout']);
