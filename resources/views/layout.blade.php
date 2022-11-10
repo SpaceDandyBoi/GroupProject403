@@ -310,11 +310,13 @@
     .footer {
       background-color: rgb(45, 45, 45);
       height: 2cm;
-      display: flex;
+      display: block;
       justify-content: center;
       align-items: center;
       margin-top: 3%;
       clear:both;
+      align-content: center;
+      text-align: center;
     }
 
 
@@ -473,6 +475,7 @@
   </div>
 
   <div class='footer'>
+    <p>we used data from the <a style="color: aqua" href="https://rawg.io/apidocs" target="_blank">rawg API</a></p>
     <img src="https://www.w3.org/Icons/valid-xhtml10" alt="xhtml validation"/>
     <a href="http://jigsaw.w3.org/css-validator/check/referer">
       <img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
