@@ -511,6 +511,8 @@
     <img src="https://jigsaw.w3.org/css-validator/images/vcss-blue">
   </footer>
 
+  <script src="{{ asset('js/validation.js') }}"></script>
+
 </body>
 </html>
 
