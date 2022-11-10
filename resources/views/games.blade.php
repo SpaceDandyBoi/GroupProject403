@@ -8,12 +8,12 @@
 <div class="game_card_container">
   @foreach($games as $game)
   <div class="game_card">
-    <img class='game_card_pic' src={{$game['background_image']}}>
+    <img class='game_card_pic' src="{{$game['background_image']}}">
     <div class="game_card_info">
       <div class="game_card_info_platforms">
         @foreach(json_decode($game['parent_platforms'], true) as $platform)
-        <img class="game_card_info_platforms_icons" src={{asset('/images/icons/'.$platform['platform']['slug'].'.svg')}}
-        alt={{$platform['platform']['name']}}>
+        <img class="game_card_info_platforms_icons" src="{{asset('/images/icons/'.$platform['platform']['slug'].'.svg')}}"
+        alt="{{$platform['platform']['name']}}">
         @endforeach
       </div>
       <?php

@@ -1,15 +1,16 @@
-<!DOCTYPE html>
-<html>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta content="text/html; charset=utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link href="{{ asset('css/app.css') }}" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" />
   <title>
     Laravel Demo
   </title>
-  <style>
+  <style type="text/css">
     body {
       background-color: rgb(35, 35, 35);
       color: white;
@@ -60,7 +61,6 @@
     }
     .top_header{
       height: 70%;
-      display: inline-flexbox;
       justify-content: start;
       align-items: flex-start;
       flex-wrap: wrap;
@@ -90,7 +90,7 @@
       margin-left:13%;
       text-align: center;
       height: 100%;
-      flex-grow: 100%;
+      flex-grow: 100;
     }
     h1 {
       margin: 0 auto;
@@ -338,7 +338,7 @@
       </div>
 
       <div class='header_top_logo'>
-        <img class='header_top_logo_pic' src={{asset('/images/logo.png')}}>
+        <img class='header_top_logo_pic' src="{{asset('/images/logo.png')}}" alt="Game Show Logo"/>
       </div>
 
       <div class='header_top_title'>
@@ -347,7 +347,12 @@
 
       <div class="search-container me-2">
         <form action="/search">
-          <input type="text" placeholder="Search.." name="search" style="font-size: 70%">
+          <div>
+            <div style="margin-top:-20%; margin-bottom:-5%;">
+            <label for="search" style="color:white; font-size:60%; ">Search</label>
+          </div>
+            <input type="text" name="search" id="search" style="font-size: 60%; "/>
+          </div>
         </form>
       </div>
 
@@ -381,7 +386,7 @@
           <div class="_dropdown-content">
             <a href="/resume/Khalid_Alghamdi">Khalid Al-Ghamdi</a>
             <a href="/resume/Anas_Baubaid">Anas Baubaid</a>
-            <a href="/resume/Abdullah_Fadaag">Abdullah Fadaag</a>
+            <a href="/resume/Abdullah_Fadaq">Abdullah Fadaq</a>
             <a href="/resume/Mohammed_Alzahrani">Mohammed Alzahrani</a>
           </div>
 
@@ -396,7 +401,7 @@
   <div class='content'>
     <h1 class="mt-3 ms-2 text-light">Feedback</h1>
 
-    <section class="text-light p-3">
+    <div class="text-light p-3">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 offset-md-3">
@@ -404,16 +409,16 @@
                         <div class="card-header text-start h2 mb-2">Your Feedback is valued</div>
                         <div class="card_body">
                             @if(Session::has("message_sent"))
-                                <div class= "alert alert-success" role="alert">
+                                <div class= "alert alert-success">
                                     {{Session::get("message_sent")}}
                                 </div>
                             @elseif(Session::has("error"))
-                               <div class= "alert alert-danger" role="alert">
+                               <div class= "alert alert-danger">
                                 {{Session::get("error")}}
                             </div>
                             @else
-                            <form name = "myform" id="myform" action= "{{route('storeFeedback')}}" method="POST" enctype="multipart/form-data">
-                                @csrf
+                            <form  id="myform" action= "{{route('storeFeedback')}}" method="post" enctype="multipart/form-data">
+                                 @csrf
                                 <div>Personal Info</div>
                                 <fieldset style="border: 2px solid white" class="mb-3">
                                     <div class="form-group m-3 col-6 float-left">
@@ -427,27 +432,27 @@
                                         <span id="lname-error" class="text-danger"></span>
                                     </div>
                                     <div class="form-group m-3 col-6">
-                                        <p>Gender:<p>
+                                        <p>Gender:</p>
                                         <input type="radio" id="genderM" name="gender"  value="male"  class="form-check-input"/>
-                                        <label for="name">Male</label>
+                                        <label for="genderM">Male</label>
                                         <input type="radio" id="genderF" name="gender"  value="female" class="form-check-input" />
-                                        <label for="name">Female</label>
+                                        <label for="genderF">Female</label>
                                         <span id="gender-error" class="text-danger"></span>
                                     </div>
                                     <div class="form-group m-3">
-                                        <label for="name">Email</label>
+                                        <label for="email">Email</label>
                                         <input type="text" name="email" id="email" class="form-control" />
                                         <span id="email-error" class="text-danger"></span>
                                     </div>
                                     <div class="form-group m-3">
-                                        <label for="name">phone</label>
+                                        <label for="phone">phone</label>
                                         <input type="text" name="phone" id="phone" class="form-control" />
                                         <span id="phone-error" class="text-danger"></span>
                                     </div>
                                     <div class="form-group m-3">
-                                        <label for="name">Country</label>
-                                        <select name="country" id="country" class="form-select" aria-label="Default select example">
-                                            <option selected value=""></option>
+                                        <label for="country">Country</label>
+                                        <select name="country" id="country" class="form-select">
+
                                             <option value="Saudi Arabia">Saudi Arabia</option>
                                             <option value="United State">United State</option>
                                             <option value="United Kindom">United Kindom</option>
@@ -458,17 +463,17 @@
                                         <span id="country-error" class="text-danger"></span>
                                     </div>
                                     <div class="form-group m-3">
-                                        <label for="name">State</label>
+                                        <label for="state">State</label>
                                         <input type="text" name="state" id="state" class="form-control" />
                                         <span id="state-error" class="text-danger"></span>
                                     </div>
                                     <div class="form-group m-3">
-                                        <label for="name">City</label>
+                                        <label for="city">City</label>
                                         <input type="text" name="city" id="city" class="form-control" />
                                         <span id="city-error" class="text-danger"></span>
                                     </div>
                                     <div class="form-group m-3">
-                                        <label for="name">Adress</label>
+                                        <label for="address">Adress</label>
                                         <input type="text" name="address" id="address" class="form-control" />
                                         <span id="address-error" class="text-danger"></span>
                                     </div>
@@ -476,24 +481,24 @@
                                 <div>Feedback</div>
                                 <fieldset style="border: 2px solid white" class="mb-3">
                                     <div class="form-group m-3">
-                                        <p>Message Categories</P>
-                                        <label for="name">Complaint</label>
-                                        <input type="checkbox" id ="complaint" name="Categories[]"  value="complaint" class="form-check-input me-2">
-                                        <label for="name">suggestion</label>
-                                        <input type="checkbox" id ="suggestion" name="Categories[]"  value="suggestion" class="form-check-input me-2">
-                                        <label for="name">Tech Support</label>
-                                        <input type="checkbox" id ="support" name="Categories[]"  value="support" class="form-check-input">
+                                        <p>Message Categories</p>
+                                        <label for="complaint">Complaint</label>
+                                        <input type="checkbox" id ="complaint" name="Categories[]"  value="complaint" class="form-check-input me-2"/>
+                                        <label for="suggestion">suggestion</label>
+                                        <input type="checkbox" id ="suggestion" name="Categories[]"  value="suggestion" class="form-check-input me-2"/>
+                                        <label for="support">Tech Support</label>
+                                        <input type="checkbox" id ="support" name="Categories[]"  value="support" class="form-check-input"/>
                                         <span id="cat-error" class="text-danger"></span>
                                     </div>
                                     
                                     <div class="form-group m-3">
-                                        <label for="name">Subject</label>
-                                        <input type="text" name="subject" id="subject" class="form-control">
+                                        <label for="subject">Subject</label>
+                                        <input type="text" name="subject" id="subject" class="form-control"/>
                                         <span id="subject-error" class="text-danger"></span>
                                     </div>
                                     <div class="form-group m-3">
                                         <label for="msg">Message</label>
-                                        <textarea name="msg" id="msg" class="form-control"></textarea>
+                                        <textarea name="msg" id="msg" class="form-control" rows="5" cols="15"></textarea>
                                         <span id="msg-error" class="text-danger"></span>
                                     </div>
                                 </fieldset>
@@ -508,16 +513,18 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+  </div>
+  </div>
   </div>
 
-  <footer class='footer'>
-    <img src="https://www.w3.org/Icons/valid-xhtml10">
-    <img src="https://jigsaw.w3.org/css-validator/images/vcss-blue">
-  </footer>
+    <div class='footer'>
+      <img src="https://www.w3.org/Icons/valid-xhtml10" alt="XHYML validation"/>
+      <a href="http://jigsaw.w3.org/css-validator/check/referer">
+        <img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
+      </a>
+    </div>
 
-  <script src="{{ asset('js/validation.js') }}"></script>
+  <script src="{{asset('js/validation.js')}}" type="application/javascript"></script>
 
 </body>
 </html>

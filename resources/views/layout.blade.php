@@ -1,14 +1,15 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta content="text/html; charset=utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/app.css') }}" rel="stylesheet"/>
   <title>
     Laravel Demo
   </title>
-  <style>
+  <style type="text/css">
     body {
       background-color: rgb(35, 35, 35);
       color: white;
@@ -55,7 +56,6 @@
     }
     .top_header{
       height: 70%;
-      display: inline-flexbox;
       justify-content: start;
       align-items: flex-start;
       flex-wrap: wrap;
@@ -86,7 +86,7 @@
       font-size: 30pt;
       text-align: center;
       height: 100%;
-      flex-grow: 100%;
+      flex-grow: 100;
     }
     h1 {
       margin: 0 auto;
@@ -383,10 +383,12 @@
                   
         <span style="text-transform:uppercase" > {{auth()->user()->name}} </span>
         
-        <form method="POST" action="/logout"> 
+        <form method="post" action="/logout"> 
           @csrf
-          <button type="submit" class="logoutbtn"> logout </button>
-         </form>
+          <div>
+            <button type="submit" class="logoutbtn"> logout </button>
+          </div>
+        </form>
         
         @else
 
@@ -402,9 +404,9 @@
       </div>
 
       <div class='header_top_logo'>
-        <img alt="logo" class='header_top_logo_pic' usemap="#Mmap" src={{asset('/images/logo.png')}}>
-        <map name="Mmap">
-          <area shape="default" href="/">
+        <img alt="logo" class='header_top_logo_pic' usemap="#Mmap" src="{{asset('/images/logo.png')}}"/>
+        <map name="Mmap" id="Mmap">
+          <area shape="default" href="/" alt="homePage"/>
         </map>
       </div>
 
@@ -414,11 +416,16 @@
 
       <div class="search-container">
         <form action="/search">
-          <input type="text" placeholder="Search.." name="search" style="font-size: 70%">
+          <div>
+            <div style="">
+              <input type="text" name="search" id="search" style="font-size: 70%; "/>
+              <button type="submit" id="searchBitton" style="font-size: 60%;  background-color: #e7e7e7;  border: none; color: black; text-align: center; text-decoration: none; display: inline-block;" >Search</button>
+            </div>
+          </div>
         </form>
       </div>
 
-      <div class="navbar" style="margin-left: 20%;">
+      <div class="navbar" style="margin-left:20%;">
         <a href="/">Home</a>
 
         <div class="dropdown">
@@ -465,10 +472,12 @@
     @yield('content')
   </div>
 
-  <footer class='footer'>
-    <img src="https://www.w3.org/Icons/valid-xhtml10">
-    <img src="https://jigsaw.w3.org/css-validator/images/vcss-blue">
-  </footer>
+  <div class='footer'>
+    <img src="https://www.w3.org/Icons/valid-xhtml10" alt="xhtml validation"/>
+    <a href="http://jigsaw.w3.org/css-validator/check/referer">
+      <img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
+    </a>
+</div>
 
 </body>
 </html>

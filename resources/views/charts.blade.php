@@ -27,8 +27,8 @@
       <td style="color: {{$rating_color}}">{{$game['rating']}}</td>
       <td>
       @foreach(json_decode($game['parent_platforms'], true) as $platform)
-      <img class="game_card_info_platforms_icons" src={{asset('/images/icons/'.$platform['platform']['slug'].'.svg')}}
-      alt={{$platform['platform']['name']}}>
+      <img class="game_card_info_platforms_icons" src="{{asset('/images/icons/'.$platform['platform']['slug'].'.svg')}}"
+      alt="{{$platform['platform']['name']}}">
       @endforeach
     </td>
     </tr>

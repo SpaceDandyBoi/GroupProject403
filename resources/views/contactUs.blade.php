@@ -36,7 +36,7 @@
     <script src="https://kit.fontawesome.com/69da8dc6d3.js" crossorigin="anonymous"></script>
 
 
-<script>
+<script type="application/javascript">
     var encEmail = "c3VwcG9ydEBHYW1lU2hvdy5jb20=";
     const form = document.getElementById("contact");
     form.setAttribute("href", "mailto:".concat(atob(encEmail)));

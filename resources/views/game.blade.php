@@ -8,7 +8,7 @@ if(empty($gameExtra[1])){
 }
 $jsonPics = GameController::DecodePics($pics);
 ?>
-<style>
+<style type="text/css">
     .Game_Container {
         margin-left: 5%;
         margin-top: 3%;
@@ -28,7 +28,7 @@ $jsonPics = GameController::DecodePics($pics);
     #Game_Name {
         font-family: 'Franklin Gothic Medium';
         font-size: 300%;
-        color: #white;
+        color: white;
         -webkit-text-stroke: 0.1rem #010100;
     }
 
@@ -86,7 +86,7 @@ $jsonPics = GameController::DecodePics($pics);
   }
 
 </style>
-<script type="text/javascript">
+<script type="application/javascript">
     var jsonPics = "{{ $jsonPics }}";
     jsonPics = jsonPics.substring(1);
     Pics = jsonPics.split(",");
@@ -131,7 +131,7 @@ $jsonPics = GameController::DecodePics($pics);
             <div class="game_title_info_container">
               <div class="game_title_info_container_left">
                 <div style="height: 325px; width: 500px;">
-                  <img id="imageGame" name="imageGame" src={{ $game['background_image'] }}>
+                  <img id="imageGame" name="imageGame" src="{{ $game['background_image'] }}">
                 </div>
               </div>
               <div class="game_title_info_container_right">
@@ -161,8 +161,8 @@ $jsonPics = GameController::DecodePics($pics);
                   <p class="game_summary"> {{$gameExtra[0]}} </p>
                   <p class="game_release" style="display: inline"> Released: {{ $game['released'] }} </p>
                   @foreach(json_decode($game['parent_platforms'], true) as $platform)
-                  <img class="game_card_info_platforms_icons" src={{asset('/images/icons/'.$platform['platform']['slug'].'.svg')}}
-                  alt={{$platform['platform']['name']}}>
+                  <img class="game_card_info_platforms_icons" src="{{asset('/images/icons/'.$platform['platform']['slug'].'.svg')}}"
+                  alt="{{$platform['platform']['name']}}"">
                   @endforeach
                 </div>
               </div>
@@ -175,7 +175,7 @@ $jsonPics = GameController::DecodePics($pics);
             <div class="game_galary">
                 <div class="game_galary_top">
                     <div class="game_galary_top_left">
-                        <img class="game_galary_top_arrows" src={{ asset('/images/icons/rounded_left_arrow.svg') }}
+                        <img class="game_galary_top_arrows" src="{{ asset('/images/icons/rounded_left_arrow.svg') }}"
                             onclick="UpdateGalary('previous')">
                     </div>
                     <div class="game_galary_top_middle" id="game_galary_top_middle">
@@ -186,7 +186,7 @@ $jsonPics = GameController::DecodePics($pics);
                         </div>
                     </div>
                     <div class="game_galary_top_right">
-                        <img class="game_galary_top_arrows" src={{ asset('/images/icons/rounded_right_arrow.svg') }}
+                        <img class="game_galary_top_arrows" src="{{ asset('/images/icons/rounded_right_arrow.svg') }}"
                             onclick="UpdateGalary('next')">
                     </div>
                 </div>
