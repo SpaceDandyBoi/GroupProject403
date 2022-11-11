@@ -15,7 +15,7 @@
     </tr>
     @foreach($games as $game)
     <tr>
-      <td>{{$game['name']}}</td>
+      <td><a class="underline_link" href="/game/{{$game['slug']}}">{{$game['name']}} </a></td>
       <td>{{$game['added']}}</td>
       <?php
       if($game['rating'] >= 4.5) {$rating_color = '#57e32c';}

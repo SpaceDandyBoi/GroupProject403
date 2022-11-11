@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 
-.container {
+.Rcontainer {
   padding: 16px;
   margin-top: 3%;
   margin-bottom: 1%;
@@ -15,7 +15,7 @@
   background-color: rgba(0, 0, 0, 0.3);
 }
 
-input[type=text], input[type=email], input[type=password] {
+.inputC[type=text], .inputC[type=email], .inputC[type=password] {
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
@@ -24,7 +24,7 @@ input[type=text], input[type=email], input[type=password] {
   background: #f1f1f1;
 }
 
-input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
+.inputC[type=text]:focus, .inputC[type=email]:focus, .inputC[type=password]:focus {
   background-color: #ddd;
   outline: none;
 }
@@ -67,7 +67,7 @@ a {
 <form method="POST" action="/users">
     @csrf
 
-<div class="container">
+<div class="Rcontainer">
 
     <h1>Register</h1>
     <p>Create an account.</p>
@@ -77,9 +77,8 @@ a {
 
     <!-- name section -->
         <label for="name"> <b> Name </b> </label>
-        <input
-            type="text" 
-            placeholder="enter your name"          
+        <input class="inputC"
+            type="text"      
             name="name" value="{{old('name')}}" />
 
         @error('name')
@@ -89,9 +88,8 @@ a {
 
     <!-- email section -->
         <label for="email"> <b>Email <b> </label>
-        <input
+        <input class="inputC"
             type="email"
-            placeholder="enter your email"
             name="email" value="{{old('email')}}" />
         
         @error('email')
@@ -101,9 +99,8 @@ a {
 
     <!-- password section -->
         <label for="password"> <b>Password </b> </label>
-        <input
+        <input class="inputC"
             type="password"
-            placeholder="enter your password"
             name="password"  value="{{old('password')}}" />
 
         @error('password')
@@ -114,9 +111,8 @@ a {
 
     <!-- password confirmation section -->
         <label for="password2"> <b>Confirm Password </b> </label>
-        <input
+        <input class="inputC"
             type="password"
-            placeholder="please confirm your password"
             name="password_confirmation"  value="{{old('password_confirmation')}}" />
 
         @error('password_confirmation')

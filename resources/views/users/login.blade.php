@@ -15,7 +15,7 @@
   background-color: rgba(0, 0, 0, 0.3);
 }
 
-input[type=text], input[type=email], input[type=password] {
+.inputC[type=text], .inputC[type=email], .inputC[type=password] {
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
@@ -24,7 +24,7 @@ input[type=text], input[type=email], input[type=password] {
   background: #f1f1f1;
 }
 
-input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
+.inputC[type=text]:focus, .inputC[type=email]:focus, .inputC[type=password]:focus {
   background-color: #ddd;
   outline: none;
 }
@@ -77,7 +77,7 @@ a {
 
     <!-- email section -->
         <label for="email"> <b>Email <b> </label>
-        <input
+        <input class="inputC"
             type="email"
             placeholder="enter your email"
             name="email"  value="{{old('email')}}" />
@@ -89,7 +89,7 @@ a {
 
     <!-- password section -->
         <label for="password"> <b>Password </b> </label>
-        <input
+        <input class="inputC"
             type="password"
             placeholder="enter your password"
             name="password" value="{{old('password')}}" />
