@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="{{ asset('css/app.css') }}" rel="stylesheet"/>
   <title>
-    Laravel Demo
+    Game Show
   </title>
   <style type="text/css">
     body {
@@ -318,6 +318,9 @@
       align-content: center;
       text-align: center;
     }
+    #search{
+      font-size: 70%;
+    }
 
 
     
@@ -419,8 +422,8 @@
       <div class="search-container">
         <form action="/search">
           <div>
-            <div style="">
-              <input type="text" name="search" id="search" style="font-size: 70%; "/>
+            <div>
+              <input type="text" name="search" id="search"/>
               <button type="submit" id="searchBitton" style="font-size: 60%;  background-color: #e7e7e7;  border: none; color: black; text-align: center; text-decoration: none; display: inline-block;" >Search</button>
             </div>
           </div>

@@ -8,7 +8,7 @@
   <link href="{{ asset('css/app.css') }}" rel="stylesheet"/>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" />
   <title>
-    Laravel Demo
+    Game Show
   </title>
   <style type="text/css">
     body {
