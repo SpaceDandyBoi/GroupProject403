@@ -463,7 +463,7 @@
 
         </div>
 
-        <a href="http://abaubaid.info/blog/">Blog</a>
+        <a href="http://www.abaubaid.info/blog/">Blog</a>
         
       </div> 
 
